@@ -193,7 +193,6 @@ footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--
     mask-image: linear-gradient(90deg, #000 80%, transparent);
   }
   .role { min-height: 3em; }
-  .rotator { display: block; }
 }
 
 /* ---------- Motion ---------- */
@@ -204,6 +203,8 @@ footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--
 }
 .rotator { display: inline-block; color: var(--accent); transition: opacity .35s ease, transform .35s ease; }
 .rotator.out { opacity: 0; transform: translateY(-8px); }
+/* On phones, keep the rotating phrase on its own line so the headline never jumps */
+@media (max-width: 640px) { .rotator { display: block; } }
 
 .js .hero .eyebrow, .js .hero h1, .js .hero .role, .js .hero .tagline, .js .hero-actions, .js .hero .socials {
   animation: rise .9s cubic-bezier(.2, .7, .2, 1) both;
