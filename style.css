@@ -177,12 +177,57 @@ strong, .hl { color: var(--text-strong); font-weight: 500; }
 .link-arrow:hover { color: var(--accent); border-color: var(--accent); }
 
 footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+.section-intro { margin-bottom: 8px; }
+.resumes + .group-label { margin-top: 24px; }
+
+/* ---------- What I do: three track cards ---------- */
+.tracks-wrap { position: relative; z-index: 1; max-width: 1140px; margin: 0 auto; padding: 96px 24px 0; }
+.tracks { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.track {
+  display: flex; flex-direction: column;
+  padding: 26px; border: 1px solid var(--border); border-radius: 14px;
+  background: linear-gradient(180deg, rgba(17, 26, 46, 0.95), rgba(17, 26, 46, 0.45));
+  transition: border-color .25s, box-shadow .25s;
+}
+.track:hover { border-color: rgba(94, 234, 212, 0.4); box-shadow: 0 18px 44px -22px rgba(94, 234, 212, 0.4); }
+.track-icon {
+  display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 18px;
+  border-radius: 10px; background: var(--accent-soft); color: var(--accent);
+}
+.track-icon svg { width: 22px; height: 22px; }
+.track h3 { color: var(--text-strong); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
+.track .roles { margin-top: 4px; font-family: var(--mono); font-size: 0.72rem; color: var(--accent); }
+.track p:not(.roles) { margin-top: 14px; font-size: 0.92rem; }
+.track ul.points { margin: 14px 0 0 18px; font-size: 0.88rem; }
+.track ul.points li + li { margin-top: 6px; }
+.track-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 22px; }
+.chip-link {
+  padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px;
+  color: var(--text-strong); font-size: 0.78rem; font-weight: 500;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.chip-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+/* ---------- Project filter ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.filter {
+  padding: 7px 16px; border: 1px solid var(--border); border-radius: 999px;
+  background: transparent; color: var(--text);
+  font: inherit; font-size: 0.82rem; font-weight: 500; cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.filter:hover { color: var(--text-strong); border-color: rgba(148, 163, 184, 0.4); }
+.filter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.project-group[hidden] { display: none; }
 
 @media (min-width: 640px) {
   .skills, .resumes { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 768px) {
   .item { grid-template-columns: 140px 1fr; gap: 24px; }
+}
+@media (min-width: 960px) {
+  .tracks { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 @media (max-width: 640px) {
   .topbar { padding: 14px 20px; gap: 16px; }

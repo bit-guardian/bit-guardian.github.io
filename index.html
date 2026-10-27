@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Avikam Jha | Human-Centered AI</title>
-  <meta name="description" content="Avikam Jha is an M.S. Computer Engineering student at ASU who researches LLM interpretability and human workload in robot learning, with a background in DevOps, RTL design, verification, and physical design.">
+  <title>Avikam Jha | Silicon, DevOps &amp; AI Engineer</title>
+  <meta name="description" content="Avikam Jha is an M.S. Computer Engineering student at ASU working across digital hardware (RTL design, design verification, and physical design), DevOps and platform engineering, and AI/ML research.">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <div class="spotlight" aria-hidden="true"></div>
@@ -19,250 +19,419 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Back to top">AJ<span>.</span></a>
     <nav aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
+      <a href="#tracks">What I Do</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
       <a href="#skills">Skills</a>
       <a href="#resume">Résumé</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-    <section class="hero" id="top">
-      <p class="eyebrow">Hello, I'm</p>
-      <h1>Avikam Jha</h1>
-      <p class="role">I build <span class="rotator">human-centered AI</span></p>
-      <p class="tagline">M.S. in Computer Engineering at ASU. I study how people and AI systems understand each other, from the features inside language models to the people who teach robots.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#research">See my work</a>
-        <a class="btn btn-ghost" href="#resume">Résumé</a>
-      </div>
+  <section class="hero" id="top">
+    <p class="eyebrow">Hello, I'm</p>
+    <h1>Avikam Jha</h1>
+    <p class="role">I build <span class="rotator">chips from RTL to GDS</span></p>
+    <p class="tagline">M.S. in Computer Engineering at ASU, working across three layers of computing. I design, verify, and implement digital hardware, run production cloud infrastructure, and build and study AI systems.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#tracks">See what I do</a>
+      <a class="btn btn-ghost" href="#resume">Résumés</a>
+    </div>
 
-      <ul class="socials" aria-label="Social links">
-        <li><a href="https://github.com/bit-guardian" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-        </a></li>
-        <li><a href="https://www.linkedin.com/in/avikamjha/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-        </a></li>
-        <li><a href="mailto:avikamjh@asu.edu" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        </a></li>
-      </ul>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to About">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-      </a>
+    <ul class="socials" aria-label="Social links">
+      <li><a href="https://github.com/bit-guardian" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/avikamjha/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a></li>
+      <li><a href="mailto:avikamjh@asu.edu" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      </a></li>
+    </ul>
+    <a class="scroll-cue" href="#tracks" aria-label="Scroll to What I Do">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <section id="tracks" class="tracks-wrap">
+    <h2 class="section-title">What I Do</h2>
+    <div class="tracks">
+      <article class="track">
+        <div class="track-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+        </div>
+        <h3>Silicon</h3>
+        <p class="roles">RTL Design · Design Verification · Physical Design</p>
+        <p>I take digital designs from micro-architecture and RTL through coverage-driven verification to synthesis, place-and-route, and signoff in 7nm.</p>
+        <ul class="points">
+          <li>Built a sparse GCN accelerator that closed with zero setup and hold violations across 2,196 paths.</li>
+          <li>Designed a 5-stage pipelined CPU with full forwarding, atomics, and a CAM.</li>
+          <li>Closed functional coverage against an independent C reference model.</li>
+        </ul>
+        <div class="track-links">
+          <a class="chip-link" href="#projects" data-filter="silicon">Silicon projects</a>
+          <a class="chip-link" href="resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener">RTL résumé ↗</a>
+          <a class="chip-link" href="resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener">DV résumé ↗</a>
+          <a class="chip-link" href="resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener">PD résumé ↗</a>
+        </div>
+      </article>
+
+      <article class="track">
+        <div class="track-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.3-8.8A6 6 0 0 0 4.5 12 3.5 3.5 0 0 0 6 19h11.5Z"/></svg>
+        </div>
+        <h3>DevOps &amp; Platform</h3>
+        <p class="roles">DevOps · SRE · Cloud Infrastructure</p>
+        <p>I spent over two years at Park+ running production infrastructure for a 60+ microservice platform with Kubernetes, Terraform, CI/CD, and observability.</p>
+        <ul class="points">
+          <li>Led an AWS-to-GCP migration with under 2 hours of downtime.</li>
+          <li>Cut infrastructure costs by 30% and incident resolution time by 40%.</li>
+          <li>AWS Solutions Architect and Terraform Associate certified.</li>
+        </ul>
+        <div class="track-links">
+          <a class="chip-link" href="#projects" data-filter="devops">DevOps projects</a>
+          <a class="chip-link" href="resume/avikam-jha-devops.pdf" target="_blank" rel="noopener">DevOps résumé ↗</a>
+        </div>
+      </article>
+
+      <article class="track">
+        <div class="track-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="12" cy="13" r="2"/><path d="M12 7v4M10.6 14.4l-4.2 3.2M13.4 14.4l4.2 3.2"/></svg>
+        </div>
+        <h3>AI &amp; ML</h3>
+        <p class="roles">ML Engineering · Interpretability · HRI</p>
+        <p>I build and study AI systems, from custom CUDA kernels and LLM pipelines to research on how people understand and work with AI.</p>
+        <ul class="points">
+          <li>First author on a systematic review submitted to HRI 2027.</li>
+          <li>Built a sparse-autoencoder pipeline to interpret LLM planning.</li>
+          <li>Wrote CUDA kernels integrated into PyTorch autograd.</li>
+        </ul>
+        <div class="track-links">
+          <a class="chip-link" href="#projects" data-filter="ai">AI projects</a>
+          <a class="chip-link" href="#research">Research</a>
+          <a class="chip-link" href="resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener">AI/ML résumé ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p>I'm an <strong>M.S. student in Computer Engineering at Arizona State University</strong> (GPA 4.0), graduating in December 2026. My work spans three layers of computing: <strong>digital hardware</strong>, <strong>cloud infrastructure</strong>, and <strong>AI</strong>.</p>
+      <p>On the hardware side, I write RTL, build coverage-driven testbenches, and take blocks through synthesis and place-and-route to clean signoff. Before grad school, I spent over two years at Park+, growing from intern to SDE 2 while running Kubernetes infrastructure in production. My thesis research is in human-centered AI, where I study LLM interpretability and the human workload behind robot learning.</p>
+      <p>Working across these layers lets me reason about a system from the transistor to the cluster to the model, and I enjoy roles where that breadth is useful.</p>
     </section>
 
-    <main>
-      <section id="about">
-        <h2 class="section-title">About</h2>
-        <p>I'm a <strong>thesis-track M.S. student in Computer Engineering at Arizona State University</strong> (GPA 4.0), graduating in December 2026. My research is in <strong>human-centered AI</strong>: making model behavior legible to the people who rely on it and making the human side of robot learning less costly.</p>
-        <p>My thesis has two threads: using <span class="hl">sparse autoencoders</span> to help people predict when an LLM will fail at planning, and measuring <span class="hl">operator workload</span> across the ways we collect robot demonstration data. My thesis committee is Prof. Lindsay Sanneman, Prof. Ransalu Senanayake, and Prof. Nakul Gopalan.</p>
-        <p>Before grad school, I spent <strong>over two years at Park+</strong>, growing from intern to SDE 2 while running Kubernetes infrastructure for a 60+ microservice platform. At ASU, I've also taken chips from <strong>RTL to GDS</strong> by designing, verifying, and physically implementing a sparse GCN accelerator in 7nm. I'm comfortable anywhere from silicon to cluster to model.</p>
-      </section>
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
 
-      <section id="research">
-        <h2 class="section-title">Research</h2>
-
-        <div class="item">
-          <div class="item-meta">2026</div>
-          <div>
-            <h3>Human Workload Across Robot Demonstration Data Collection Modalities <span class="status">ongoing</span></h3>
-            <p>This IRB-approved, within-subjects study compares five ways of collecting robot-learning data (SpaceMouse, leader-arm, and VR teleoperation, head-mounted video, and data gloves) and measures operator workload, fatigue, and ergonomics on cloth-folding and cup-stacking tasks.</p>
-            <ul class="tags"><li>Human-Robot Interaction</li><li>User studies</li><li>Teleoperation</li><li>Robot learning</li></ul>
-          </div>
+      <div class="item">
+        <div class="item-meta">Mar 2022 to Jul 2024</div>
+        <div>
+          <h3>SDE Intern → SDE 1 → SDE 2 <span class="sub">· Park+, Gurugram</span></h3>
+          <ul class="points">
+            <li>Built and operated cloud infrastructure for a 60+ microservice platform running 100+ pods on Kubernetes.</li>
+            <li>Led the AWS-to-GCP migration of Elasticsearch, Redis, MongoDB, and Kubernetes with under 2 hours of downtime, cutting costs by 30% and improving performance by 25%.</li>
+            <li>Automated 95% of environment provisioning with Terraform, Ansible, and Python, cutting setup time from days to under 45 minutes.</li>
+            <li>Built observability with Prometheus, Grafana, ELK, and OpenTelemetry, defined SLOs, and joined on-call, cutting MTTD by 30% and MTTR by 40%.</li>
+            <li>Moved 400+ credentials into HashiCorp Vault and remediated 98% of high-severity findings for SOC 2 audits.</li>
+          </ul>
+          <ul class="tags"><li>Kubernetes</li><li>AWS</li><li>GCP</li><li>Terraform</li><li>Vault</li><li>Prometheus</li></ul>
         </div>
+      </div>
 
-        <div class="item">
-          <div class="item-meta">2025 to 2026</div>
-          <div>
-            <h3>Interpretability of LLM Planning via Sparse Autoencoders <span class="status">ongoing</span></h3>
-            <p>I built a SAELens and TransformerLens pipeline that extracts SAE features from an LLM solving automated-planning problems, surfaces top-activating prompts, and auto-labels the features. A human-in-the-loop study then tests whether seeing those feature labels helps people predict when the model will fail.</p>
-            <ul class="tags"><li>SAELens</li><li>TransformerLens</li><li>Sparse autoencoders</li><li>PDDL planning</li></ul>
-          </div>
+      <div class="item">
+        <div class="item-meta">Aug 2025 to May 2026</div>
+        <div>
+          <h3>Graduate Service Assistant <span class="sub">· Arizona State University</span></h3>
+          <p>I evaluated EEE 120 digital design labs (adders, multiplexers, decoders, ALUs, counters, and FSMs) and graded EEE 202 circuit analysis, checking CAD and SPICE simulations for correctness and timing.</p>
+          <ul class="tags"><li>Digital design</li><li>SPICE</li></ul>
         </div>
+      </div>
 
-        <p class="group-label">// publications</p>
-        <div class="item">
-          <div class="item-meta">Sep 2026</div>
-          <div>
-            <h3>Robotics Data Collection Modality Survey <span class="sub">· HRI 2027 (under review)</span></h3>
-            <p class="authors"><strong>A. Jha</strong>, R. Sadhwani, and L. Sanneman · Submitted to ACM/IEEE HRI 2027, Theory and Methods</p>
-            <p>This PRISMA systematic review screened 685 records down to 27 post-2022 studies (392 participants) that compare teleoperation, wearable capture, and human-video data collection. It contributes a modality taxonomy and a nine-gap analysis of the experiments the field still needs.</p>
-          </div>
+      <div class="item">
+        <div class="item-meta">May to Aug 2025</div>
+        <div>
+          <h3>Research Aide, Intro to Materials Science <span class="sub">· Arizona State University</span></h3>
+          <p>I authored 40+ assignment questions and technical documentation across 10+ semiconductor topics for a 120+ student cohort.</p>
         </div>
-      </section>
+      </div>
 
-      <section id="experience">
-        <h2 class="section-title">Experience</h2>
-
-        <div class="item">
-          <div class="item-meta">Mar 2022 to Jul 2024</div>
-          <div>
-            <h3>SDE Intern → SDE 1 → SDE 2 <span class="sub">· Park+, Gurugram</span></h3>
-            <ul class="points">
-              <li>Built and operated cloud infrastructure for a 60+ microservice platform running 100+ pods on Kubernetes.</li>
-              <li>Led the AWS-to-GCP migration of Elasticsearch, Redis, MongoDB, and Kubernetes with under 2 hours of downtime, cutting costs by 30% and improving performance by 25%.</li>
-              <li>Automated 95% of environment provisioning with Terraform, Ansible, and Python, cutting setup time from days to under 45 minutes.</li>
-              <li>Built observability with Prometheus, Grafana, ELK, and OpenTelemetry, defined SLOs, and joined on-call, cutting MTTD by 30% and MTTR by 40%.</li>
-              <li>Moved 400+ credentials into HashiCorp Vault and remediated 98% of high-severity findings for SOC 2 audits.</li>
-            </ul>
-            <ul class="tags"><li>Kubernetes</li><li>AWS</li><li>GCP</li><li>Terraform</li><li>Vault</li><li>Prometheus</li></ul>
-          </div>
+      <div class="item">
+        <div class="item-meta">Oct 2021 to Feb 2022</div>
+        <div>
+          <h3>Software Developer Intern <span class="sub">· Winjit Technologies, Nashik</span></h3>
+          <p>I migrated a client's on-premises infrastructure to Kubernetes on Microsoft Azure, redesigning the deployment pipeline to cut deployment time by 20%.</p>
+          <ul class="tags"><li>Azure</li><li>Kubernetes</li><li>CI/CD</li></ul>
         </div>
+      </div>
 
-        <div class="item">
-          <div class="item-meta">Aug 2025 to May 2026</div>
-          <div>
-            <h3>Graduate Service Assistant <span class="sub">· Arizona State University</span></h3>
-            <p>I evaluated EEE 120 digital design labs (adders, ALUs, counters, and FSMs) and graded EEE 202 circuit analysis, checking CAD and SPICE simulations for correctness and timing.</p>
-          </div>
+      <p class="group-label">// education</p>
+      <div class="item">
+        <div class="item-meta">Aug 2024 to Dec 2026</div>
+        <div>
+          <h3>M.S. Computer Engineering (Thesis) <span class="sub">· Arizona State University</span></h3>
+          <p>GPA 4.0. Coursework includes VLSI Design, SoC Design, Digital Systems and Circuits, Computer Architecture II, Digital Verification &amp; Test, Artificial Intelligence, Foundations of Algorithms, and Data Processing at Scale.</p>
         </div>
-
-        <div class="item">
-          <div class="item-meta">May to Aug 2025</div>
-          <div>
-            <h3>Research Aide, Intro to Materials Science <span class="sub">· Arizona State University</span></h3>
-            <p>I authored 40+ assignment questions and technical documentation across 10+ semiconductor topics for a 120+ student cohort.</p>
-          </div>
+      </div>
+      <div class="item">
+        <div class="item-meta">Aug 2022</div>
+        <div>
+          <h3>B.E. Electronics &amp; Communication Engineering <span class="sub">· NIT Delhi</span></h3>
+          <p>Coursework included Digital Signal Processing, Control Theory, Data Structures &amp; Algorithms, Neural Networks, and Pattern Recognition &amp; Machine Learning.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="item">
-          <div class="item-meta">Oct 2021 to Feb 2022</div>
-          <div>
-            <h3>Software Developer Intern <span class="sub">· Winjit Technologies, Nashik</span></h3>
-            <p>I migrated a client's on-premises infrastructure to Kubernetes on Microsoft Azure, redesigning the deployment pipeline to cut deployment time by 20%.</p>
-          </div>
-        </div>
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter" type="button" data-track="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-track="silicon" aria-pressed="false">Silicon</button>
+        <button class="filter" type="button" data-track="devops" aria-pressed="false">DevOps</button>
+        <button class="filter" type="button" data-track="ai" aria-pressed="false">AI &amp; ML</button>
+      </div>
 
-        <p class="group-label">// education</p>
-        <div class="item">
-          <div class="item-meta">Aug 2024 to Dec 2026</div>
-          <div>
-            <h3>M.S. Computer Engineering (Thesis) <span class="sub">· Arizona State University</span></h3>
-            <p>GPA 4.0. Coursework includes Artificial Intelligence, Foundations of Algorithms, Probability &amp; Random Processes, Data Processing at Scale, Computer Architecture, VLSI Design, SoC Design, and Digital Verification &amp; Test.</p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-meta">Aug 2022</div>
-          <div>
-            <h3>B.E. Electronics &amp; Communication Engineering <span class="sub">· NIT Delhi</span></h3>
-            <p>Coursework included Pattern Recognition &amp; Machine Learning, Neural Networks, Data Structures &amp; Algorithms, Digital Signal Processing, and Control Theory.</p>
-          </div>
-        </div>
-      </section>
+      <div class="project-group" data-track="silicon">
+        <p class="group-label">// silicon: rtl, dv &amp; pd</p>
 
-      <section id="projects">
-        <h2 class="section-title">Projects</h2>
-
-        <p class="group-label" style="margin-top:0">// silicon</p>
         <div class="item">
           <div class="item-meta">2025</div>
           <div>
             <h3>Sparse GCN Inference Accelerator, RTL to GDS</h3>
-            <p>I architected a three-stage datapath (transformation, aggregation, and argmax) using COO sparse accumulation, then took the 16,590-cell block through synthesis, CTS, and place-and-route in ASAP7 7nm. It closed with <strong>zero setup and hold violations across 2,196 paths</strong>, 5.26 mW of power, 88.5 ns of latency against a 100 ns budget, and clean DRC and LVS. I verified the same testbench at the RTL, post-synthesis, and post-layout stages.</p>
-            <ul class="tags"><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>Virtuoso</li><li>ASAP7</li></ul>
+            <p>I architected a three-stage datapath (transformation, aggregation, and argmax) that uses COO sparse accumulation to fetch only the feature rows an edge touches, then took the 16,590-cell block through synthesis, floorplanning, CTS, and place-and-route in ASAP7 7nm.</p>
+            <ul class="points">
+              <li><strong>PPA:</strong> 5.26 mW and 88.5 ns of latency against a 100 ns budget, using zero-operand early termination and per-block clock gating.</li>
+              <li><strong>Timing:</strong> zero setup and hold violations across 2,196 paths, with clean DRC and LVS in Virtuoso.</li>
+              <li><strong>Verification:</strong> the same testbench ran at RTL, post-synthesis, and post-layout to separate timing mismatches from functional bugs.</li>
+            </ul>
+            <ul class="tags"><li>RTL</li><li>DV</li><li>PD</li><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>ASAP7</li></ul>
           </div>
         </div>
+
         <div class="item">
           <div class="item-meta">Aug to Dec 2025</div>
           <div>
             <h3>5-Stage Pipelined 32-bit CPU</h3>
-            <p>This RISC-style core has a forwarding unit across three bypass networks, hazard detection for five stall conditions, load-linked/store-conditional atomics, and a CAM for single-cycle cache tag lookup.</p>
-            <ul class="tags"><li>SystemVerilog</li><li>Micro-architecture</li></ul>
+            <p>I built a RISC-style core from memory, register-file, ALU, and PC primitives up to a full pipeline. Its forwarding unit spans three bypass networks and resolves five stall conditions, and I extended the ISA with load-linked/store-conditional atomics and a CAM for single-cycle cache tag lookup.</p>
+            <ul class="tags"><li>RTL</li><li>SystemVerilog</li><li>Micro-architecture</li></ul>
           </div>
         </div>
+
         <div class="item">
           <div class="item-meta">2025</div>
           <div>
             <h3>VeriChip: Verification Plans &amp; Functional Coverage</h3>
-            <p>I co-authored spec-mapped test and coverage plans for a memory-mapped peripheral, exhaustively verified its FSM and all 16 ALU commands, and closed coverage with four covergroups, 3-way crosses, and a C reference model linked through PLI.</p>
-            <ul class="tags"><li>SystemVerilog</li><li>Coverage</li><li>PLI</li><li>C</li></ul>
+            <p>I co-authored spec-mapped test and coverage plans for a memory-mapped peripheral, exhaustively verified its FSM and all 16 ALU commands, and closed coverage with four covergroups and 3-way crosses. A C reference model linked through PLI checks the DUT independently, with seeded random stimulus for repeatable failures.</p>
+            <ul class="tags"><li>DV</li><li>SystemVerilog</li><li>Functional coverage</li><li>PLI</li><li>C</li></ul>
           </div>
         </div>
+
         <div class="item">
           <div class="item-meta">2025</div>
           <div>
             <h3>Standard Cell Layout &amp; Parasitic Extraction</h3>
-            <p>I laid out a 6x-drive buffer to the ASAP7 7.5-track architecture with clean DRC and LVS, then used Calibre xACT 3D extraction and Elmore delay analysis to explain the growth in delay from pre-layout to post-layout.</p>
-            <ul class="tags"><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li></ul>
+            <p>I laid out a 6x-drive buffer to the ASAP7 7.5-track architecture with clean DRC and LVS, then used Calibre xACT 3D extraction and Elmore delay analysis to explain why propagation delay grew from 12.9 ps to 20.1 ps after layout.</p>
+            <ul class="tags"><li>PD</li><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li></ul>
           </div>
         </div>
 
-        <p class="group-label">// ml &amp; systems</p>
         <div class="item">
           <div class="item-meta">2025</div>
           <div>
-            <h3>Custom CUDA Kernels for PyTorch</h3>
-            <p>I wrote forward and backward CUDA kernels for Linear and ReLU layers, integrated them into PyTorch autograd, and exposed a framework-free version to Python through ctypes.</p>
-            <ul class="tags"><li>CUDA</li><li>C++</li><li>PyTorch</li></ul>
+            <h3>Registered Adder, Full-Flow Bring-Up</h3>
+            <p>I ran a boundary-flopped datapath through synthesis, power stripes, CTS, place-and-route, and GDS import for DRC and LVS, adapting the Tcl scripts for a multi-module hierarchy and analyzing the worst setup and hold paths.</p>
+            <ul class="tags"><li>PD</li><li>Tcl</li><li>Innovus</li><li>Virtuoso</li></ul>
           </div>
         </div>
+
+        <div class="item">
+          <div class="item-meta">2024 to 2025</div>
+          <div>
+            <h3>Custom Circuits &amp; FinFET Characterization</h3>
+            <p>I designed a mirror-architecture 4-bit adder that reached 240 ps, 27.43 µW, and 23 µm² by upsizing only its final six stacked transistors. I also characterized SLVT, LVT, RVT, and SRAM FinFET devices across temperature to guide multi-Vt cell selection.</p>
+            <ul class="tags"><li>PD</li><li>HSPICE</li><li>SAED 32nm</li><li>ASAP7</li></ul>
+          </div>
+        </div>
+
         <div class="item">
           <div class="item-meta">2025</div>
           <div>
             <h3>Cache Replacement &amp; Out-of-Order Study</h3>
-            <p>I implemented the LRU-IPV PseudoLRU policy as a gem5 SimObject and swept pipeline widths, measuring a 1.7x slowdown from 8-wide to 2-wide out-of-order cores.</p>
-            <ul class="tags"><li>gem5</li><li>C++</li><li>Python</li></ul>
+            <p>I implemented the LRU-IPV PseudoLRU policy as a C++ SimObject in gem5 and swept pipeline widths, measuring a 1.7x slowdown from 8-wide to 2-wide out-of-order cores and identifying memory access as the bottleneck.</p>
+            <ul class="tags"><li>Architecture</li><li>gem5</li><li>C++</li></ul>
           </div>
         </div>
+
+        <div class="item">
+          <div class="item-meta">Sep to Dec 2026</div>
+          <div>
+            <h3>RTL IP, UVM &amp; RTL-to-GDS Program <span class="status">in progress</span></h3>
+            <ul class="points">
+              <li><strong>RTL:</strong> lint-clean, parameterized IP (UART, synchronous and asynchronous FIFOs, round-robin arbiter, CDC synchronizers, and Hamming ECC) integrated into a RISC-V RV32I SoC over AXI4-Lite and APB.</li>
+              <li><strong>DV:</strong> UVM environments with agents, scoreboards, constrained-random sequences, and RAL for APB and AXI4-Lite blocks, plus SVA and a formal FIFO safety proof.</li>
+              <li><strong>PD:</strong> taking the IP and SoC through SDC constraints, place-and-route, and DRC/LVS signoff in open-source and Cadence flows.</li>
+            </ul>
+            <ul class="tags"><li>RTL</li><li>DV</li><li>PD</li><li>UVM</li><li>SVA</li><li>RISC-V</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-group" data-track="devops">
+        <p class="group-label">// devops &amp; platform</p>
+
+        <div class="item">
+          <div class="item-meta">2022 to 2024</div>
+          <div>
+            <h3>AWS-to-GCP Platform Migration <span class="sub">· Park+</span></h3>
+            <p>I led the migration of Elasticsearch, Redis, MongoDB, and Kubernetes workloads from AWS to GCP with under 2 hours of downtime, then right-sized compute, storage, and databases to cut costs by 30% while improving performance by 25%.</p>
+            <ul class="tags"><li>GCP</li><li>AWS</li><li>Kubernetes</li><li>Terraform</li></ul>
+          </div>
+        </div>
+
         <div class="item">
           <div class="item-meta">AI for Ops</div>
           <div>
-            <h3>Kubernetes AI Troubleshooting Agent &amp; MCP Server</h3>
-            <p>I built an agent that diagnoses and fixes cluster issues, validating AI output before it takes any action, and a Python MCP server that connects AI assistants to internal tools and runbooks.</p>
-            <ul class="tags"><li>MCP</li><li>LLM agents</li><li>Kubernetes</li><li>Python</li></ul>
+            <h3>Kubernetes AI Troubleshooting Agent</h3>
+            <p>I built an agent that diagnoses and fixes cluster issues and validates the AI's output before it takes any action, reducing manual triage time by about 40%.</p>
+            <ul class="tags"><li>Kubernetes</li><li>LLM agents</li><li>Python</li></ul>
           </div>
         </div>
-      </section>
 
-      <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills">
+        <div class="item">
+          <div class="item-meta">AI for Ops</div>
           <div>
-            <h4>// ml &amp; research</h4>
-            <ul class="tags"><li>PyTorch</li><li>SAELens</li><li>TransformerLens</li><li>CUDA</li><li>RL</li><li>PDDL</li><li>User studies</li><li>PRISMA</li></ul>
-          </div>
-          <div>
-            <h4>// infrastructure</h4>
-            <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>AWS</li><li>GCP</li><li>Azure</li><li>Argo CD</li><li>Prometheus</li></ul>
-          </div>
-          <div>
-            <h4>// hardware</h4>
-            <ul class="tags"><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li><li>gem5</li></ul>
-          </div>
-          <div>
-            <h4>// languages</h4>
-            <ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Go</li><li>Bash</li><li>Tcl</li></ul>
+            <h3>Custom MCP Server for Engineering Tools</h3>
+            <p>I built a Python MCP server that connects AI assistants to internal tools and runbooks, cutting repetitive engineering tasks by about 30%.</p>
+            <ul class="tags"><li>MCP</li><li>Python</li><li>Automation</li></ul>
           </div>
         </div>
-        <p class="certs"><strong>Certifications:</strong> AWS Certified Solutions Architect (Associate) · HashiCorp Terraform Associate · AWS Cloud Practitioner · CKA (in progress)</p>
-      </section>
+      </div>
 
-      <section id="resume">
-        <h2 class="section-title">Résumé</h2>
-        <p style="margin-bottom:20px">Pick the version that fits your role:</p>
-        <ul class="resumes">
-          <li><a href="resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener">AI / ML Research <span>PDF ↗</span></a></li>
-          <li><a href="resume/avikam-jha-devops.pdf" target="_blank" rel="noopener">DevOps / SRE <span>PDF ↗</span></a></li>
-          <li><a href="resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener">RTL Design <span>PDF ↗</span></a></li>
-          <li><a href="resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener">Design Verification <span>PDF ↗</span></a></li>
-          <li><a href="resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener">Physical Design <span>PDF ↗</span></a></li>
-        </ul>
-      </section>
+      <div class="project-group" data-track="ai">
+        <p class="group-label">// ai &amp; ml</p>
 
-      <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p>I finish my M.S. in December 2026, and I'm looking for <strong>roles in human-centered AI and interpretability, ML infrastructure, and digital hardware</strong> (RTL, verification, and physical design). If that overlaps with what you're building, I'd love to talk.</p>
-        <a class="cta" href="mailto:avikamjh@asu.edu">avikamjh@asu.edu →</a>
-      </section>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Custom CUDA Kernels for PyTorch</h3>
+            <p>I wrote forward and backward CUDA kernels for Linear and ReLU layers, integrated them into PyTorch autograd, and exposed a framework-free version to Python through ctypes with explicit host-device memory management.</p>
+            <ul class="tags"><li>CUDA</li><li>C++</li><li>PyTorch</li></ul>
+          </div>
+        </div>
 
-      <footer>
-        <p>Designed and built by Avikam Jha. Inspired by the developers in <a class="link-arrow" href="https://github.com/emmabostian/developer-portfolios" target="_blank" rel="noopener">developer-portfolios</a>.</p>
-      </footer>
-    </main>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>RAG Pipeline &amp; Local LLM Serving</h3>
+            <p>I built a retrieval pipeline that improved answer relevance by about 25% and served a local LLM with response times under 200 ms.</p>
+            <ul class="tags"><li>RAG</li><li>LangChain</li><li>LLM serving</li></ul>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Automated Planning &amp; Heuristic Search</h3>
+            <p>I wrote PDDL domains for robot pick-and-move tasks, compared A*, GBFS, UCS, and BFS in a TurtleBot environment, and designed a custom A* heuristic that outperformed Manhattan distance on complex grids.</p>
+            <ul class="tags"><li>PDDL</li><li>Search</li><li>Python</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">Research</h2>
+      <p class="section-intro">My M.S. thesis is in human-centered AI. My thesis committee is Prof. Lindsay Sanneman, Prof. Ransalu Senanayake, and Prof. Nakul Gopalan.</p>
+
+      <div class="item">
+        <div class="item-meta">2026</div>
+        <div>
+          <h3>Human Workload Across Robot Demonstration Data Collection Modalities <span class="status">ongoing</span></h3>
+          <p>This IRB-approved, within-subjects study compares five ways of collecting robot-learning data (SpaceMouse, leader-arm, and VR teleoperation, head-mounted video, and data gloves) and measures operator workload, fatigue, and ergonomics.</p>
+          <ul class="tags"><li>HRI</li><li>User studies</li><li>Teleoperation</li></ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta">2025 to 2026</div>
+        <div>
+          <h3>Interpretability of LLM Planning via Sparse Autoencoders <span class="status">ongoing</span></h3>
+          <p>I built a SAELens and TransformerLens pipeline that extracts and auto-labels SAE features from an LLM solving planning problems. A human-in-the-loop study tests whether those labels help people predict when the model will fail.</p>
+          <ul class="tags"><li>SAELens</li><li>TransformerLens</li><li>Interpretability</li></ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-meta">Sep 2026</div>
+        <div>
+          <h3>Robotics Data Collection Modality Survey <span class="sub">· HRI 2027 (under review)</span></h3>
+          <p class="authors"><strong>A. Jha</strong>, R. Sadhwani, and L. Sanneman · Submitted to ACM/IEEE HRI 2027, Theory and Methods</p>
+          <p>This PRISMA systematic review screened 685 records down to 27 studies (392 participants) comparing teleoperation, wearable capture, and human-video data collection, and contributes a modality taxonomy and a nine-gap analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div>
+          <h4>// rtl &amp; verification</h4>
+          <ul class="tags"><li>SystemVerilog</li><li>Verilog</li><li>ModelSim</li><li>Vivado</li><li>Functional coverage</li><li>PLI</li><li>UVM (in progress)</li><li>SVA (in progress)</li></ul>
+        </div>
+        <div>
+          <h4>// physical design</h4>
+          <ul class="tags"><li>Design Compiler</li><li>Innovus</li><li>Virtuoso</li><li>Calibre</li><li>IC Validator</li><li>HSPICE</li><li>ASAP7 7nm</li><li>SAED 32nm</li></ul>
+        </div>
+        <div>
+          <h4>// devops &amp; cloud</h4>
+          <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>Ansible</li><li>AWS</li><li>GCP</li><li>Azure</li><li>Argo CD</li><li>GitHub Actions</li></ul>
+        </div>
+        <div>
+          <h4>// observability &amp; security</h4>
+          <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li><li>ELK</li><li>Datadog</li><li>HashiCorp Vault</li></ul>
+        </div>
+        <div>
+          <h4>// ai &amp; ml</h4>
+          <ul class="tags"><li>PyTorch</li><li>CUDA</li><li>SAELens</li><li>TransformerLens</li><li>LangChain</li><li>RAG</li><li>PDDL</li></ul>
+        </div>
+        <div>
+          <h4>// languages &amp; tools</h4>
+          <ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Tcl</li><li>Go</li><li>Bash</li><li>gem5</li><li>Git</li><li>Linux</li></ul>
+        </div>
+      </div>
+      <p class="certs"><strong>Certifications:</strong> AWS Certified Solutions Architect (Associate) · HashiCorp Terraform Associate · AWS Cloud Practitioner · CKA (in progress)</p>
+    </section>
+
+    <section id="resume">
+      <h2 class="section-title">Résumés</h2>
+      <p class="section-intro">Pick the version that matches your role.</p>
+      <p class="group-label">// silicon</p>
+      <ul class="resumes">
+        <li><a href="resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener">RTL Design <span>PDF ↗</span></a></li>
+        <li><a href="resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener">Design Verification <span>PDF ↗</span></a></li>
+        <li><a href="resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener">Physical Design <span>PDF ↗</span></a></li>
+      </ul>
+      <p class="group-label">// devops &amp; ai</p>
+      <ul class="resumes">
+        <li><a href="resume/avikam-jha-devops.pdf" target="_blank" rel="noopener">DevOps / SRE <span>PDF ↗</span></a></li>
+        <li><a href="resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener">AI / ML <span>PDF ↗</span></a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>I finish my M.S. in December 2026, and I'm looking for full-time roles in <strong>RTL design, design verification, physical design, DevOps and platform engineering, and AI/ML</strong>. If one of those matches what you're building, I'd love to talk.</p>
+      <a class="cta" href="mailto:avikamjh@asu.edu">avikamjh@asu.edu →</a>
+    </section>
+
+    <footer>
+      <p>Designed and built by Avikam Jha. Inspired by the developers in <a class="link-arrow" href="https://github.com/emmabostian/developer-portfolios" target="_blank" rel="noopener">developer-portfolios</a>.</p>
+    </footer>
+  </main>
 
   <script>
     // Cursor spotlight
@@ -280,7 +449,7 @@
         links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
-    document.querySelectorAll('main section').forEach(s => observer.observe(s));
+    document.querySelectorAll('#tracks, main section').forEach(s => observer.observe(s));
 
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -303,12 +472,24 @@
         revealer.unobserve(entry.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('#about p, .group-label, .item, .skills > div, .certs, #resume > p, .resumes li, #contact p, #contact .cta')
+    document.querySelectorAll('.track, #about p, .section-intro, .filters, .group-label, .item, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
       .forEach(el => { el.classList.add('reveal'); revealer.observe(el); });
 
-    // Rotate through the areas I work in
+    // Project filter: show one track's projects, or all of them
+    const filters = document.querySelectorAll('.filter');
+    const applyFilter = track => {
+      filters.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.track === track)));
+      document.querySelectorAll('.project-group').forEach(g => {
+        g.hidden = track !== 'all' && g.dataset.track !== track;
+      });
+    };
+    filters.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.track)));
+    // Track cards can jump straight to their filtered projects
+    document.querySelectorAll('[data-filter]').forEach(a => a.addEventListener('click', () => applyFilter(a.dataset.filter)));
+
+    // Rotate through the kinds of work I do
     const rotator = document.querySelector('.rotator');
-    const roles = ['human-centered AI', 'interpretability tools for LLMs', 'chips from RTL to GDS', 'reliable cloud platforms'];
+    const roles = ['chips from RTL to GDS', 'testbenches that close coverage', 'reliable cloud platforms', 'RTL for custom accelerators', 'human-centered AI'];
     let role = 0;
     if (!reduceMotion) setInterval(() => {
       rotator.classList.add('out');
