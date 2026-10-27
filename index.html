@@ -9,219 +9,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b1120;
-      --bg-raised: #111a2e;
-      --text: #94a3b8;
-      --text-muted: #64748b;
-      --text-strong: #e2e8f0;
-      --accent: #5eead4;
-      --accent-soft: rgba(94, 234, 212, 0.1);
-      --border: rgba(148, 163, 184, 0.15);
-      --mono: "JetBrains Mono", ui-monospace, monospace;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    /* Soft spotlight that follows the cursor */
-    .spotlight {
-      pointer-events: none;
-      position: fixed; inset: 0; z-index: 0;
-      background: radial-gradient(600px at var(--x, 50%) var(--y, 20%), rgba(29, 78, 216, 0.12), transparent 80%);
-    }
-    a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--accent); color: var(--bg); }
-
-    .layout {
-      position: relative; z-index: 1;
-      max-width: 1180px; margin: 0 auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    /* ---------- Left column ---------- */
-    header { padding: 64px 0 32px; }
-    h1 { color: var(--text-strong); font-size: clamp(2.4rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
-    .role { color: var(--text-strong); font-size: 1.2rem; font-weight: 500; margin-top: 10px; }
-    .tagline { max-width: 360px; margin-top: 16px; }
-
-    nav { display: none; margin-top: 48px; }
-    nav a {
-      display: flex; align-items: center; gap: 16px;
-      padding: 8px 0;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text);
-      transition: color .2s;
-    }
-    nav a::before {
-      content: ""; height: 1px; width: 32px; background: var(--text);
-      transition: width .2s, background .2s;
-    }
-    nav a:hover, nav a.active { color: var(--text-strong); }
-    nav a:hover::before, nav a.active::before { width: 64px; background: var(--text-strong); }
-
-    .socials { display: flex; gap: 20px; margin-top: 32px; list-style: none; }
-    .socials a { display: block; color: var(--text); transition: color .2s; }
-    .socials a:hover { color: var(--text-strong); }
-    .socials svg { width: 24px; height: 24px; display: block; }
-
-    /* ---------- Right column ---------- */
-    main { padding-bottom: 96px; }
-    section { padding-top: 48px; scroll-margin-top: 24px; }
-    .section-title {
-      position: sticky; top: 0; z-index: 2;
-      margin: 0 -24px 20px; padding: 16px 24px;
-      background: rgba(11, 17, 32, 0.8); backdrop-filter: blur(8px);
-      color: var(--text-strong);
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    }
-    .group-label { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); margin: 28px 0 8px; }
-    p + p { margin-top: 16px; }
-    strong, .hl { color: var(--text-strong); font-weight: 500; }
-
-    .item {
-      position: relative;
-      display: grid; grid-template-columns: 1fr; gap: 6px;
-      padding: 20px; margin: 0 -20px 12px;
-      border-radius: 8px;
-      transition: background .2s, box-shadow .2s;
-    }
-    .item:hover { background: var(--bg-raised); box-shadow: inset 0 1px 0 rgba(148,163,184,0.08); }
-    .item-meta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding-top: 3px; }
-    .item h3 { color: var(--text-strong); font-size: 1rem; font-weight: 500; line-height: 1.4; }
-    .item h3 .sub { color: var(--text); }
-    .item:hover h3 { color: var(--accent); }
-    .item p { font-size: 0.92rem; margin-top: 6px; }
-    .item .authors { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
-    .item ul.points { font-size: 0.92rem; margin: 6px 0 0 18px; }
-    .item ul.points li + li { margin-top: 4px; }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; list-style: none; }
-    .tags li {
-      background: var(--accent-soft); color: var(--accent);
-      font-size: 0.75rem; font-weight: 500;
-      padding: 4px 12px; border-radius: 999px;
-    }
-
-    .status {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--mono); font-size: 0.7rem; color: var(--accent);
-      margin-left: 8px; vertical-align: middle; white-space: nowrap;
-    }
-    .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
-    @keyframes pulse { 50% { opacity: .3; } }
-
-    .skills { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .skills h4 { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--accent); margin-bottom: 8px; }
-    .skills .tags { margin-top: 0; }
-
-    .certs { margin-top: 28px; font-size: 0.92rem; }
-
-    .resumes { display: grid; grid-template-columns: 1fr; gap: 10px; list-style: none; }
-    .resumes a {
-      display: flex; justify-content: space-between; align-items: center; gap: 12px;
-      padding: 14px 18px;
-      border: 1px solid var(--border); border-radius: 8px;
-      color: var(--text-strong); font-size: 0.92rem; font-weight: 500;
-      transition: border-color .2s, background .2s, color .2s;
-    }
-    .resumes a span { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
-    .resumes a:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
-
-    .cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 24px; padding: 12px 22px;
-      border: 1px solid var(--accent); border-radius: 6px;
-      color: var(--accent); font-family: var(--mono); font-size: 0.85rem;
-      transition: background .2s;
-    }
-    .cta:hover { background: var(--accent-soft); }
-    .link-arrow { color: var(--text-strong); font-weight: 500; border-bottom: 1px solid var(--border); transition: color .2s, border-color .2s; }
-    .link-arrow:hover { color: var(--accent); border-color: var(--accent); }
-
-    footer { font-size: 0.8rem; color: var(--text-muted); padding-top: 64px; max-width: 420px; }
-
-    /* ---------- Motion ---------- */
-    .progress {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 2px;
-      background: linear-gradient(90deg, var(--accent), #818cf8);
-      transform-origin: 0 50%; transform: scaleX(var(--p, 0));
-    }
-    .rotator { display: inline-block; color: var(--accent); transition: opacity .35s ease, transform .35s ease; }
-    .rotator.out { opacity: 0; transform: translateY(-8px); }
-
-    .js header h1, .js header .role, .js header .tagline, .js header nav, .js .socials {
-      animation: rise .9s cubic-bezier(.2, .7, .2, 1) both;
-    }
-    .js header .role { animation-delay: .1s; }
-    .js header .tagline { animation-delay: .2s; }
-    .js header nav { animation-delay: .3s; }
-    .js .socials { animation-delay: .4s; }
-    @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
-
-    .js .reveal {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1), background .2s, box-shadow .2s;
-      transition-delay: var(--d, 0ms), var(--d, 0ms), 0ms, 0ms;
-    }
-    .js .reveal.in { opacity: 1; transform: none; }
-    .item:hover { box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.08), 0 0 0 1px rgba(94, 234, 212, 0.12), 0 12px 32px -16px rgba(94, 234, 212, 0.25); }
-    .tags li { transition: transform .2s; }
-    .tags li:hover { transform: translateY(-2px); }
-
-    @media (max-width: 1023px) { .role { min-height: 3.3em; } }
-
-    /* ---------- Desktop: two columns, left side sticky ---------- */
-    @media (min-width: 1024px) {
-      .layout { grid-template-columns: 1fr 1.15fr; gap: 64px; padding: 0 48px; }
-      header {
-        position: sticky; top: 0; height: 100vh;
-        display: flex; flex-direction: column; justify-content: space-between;
-        padding: 96px 0 72px;
-      }
-      nav { display: block; }
-      main { padding-top: 48px; }
-      .section-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-      .item { grid-template-columns: 140px 1fr; gap: 24px; }
-      .skills, .resumes { grid-template-columns: 1fr 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .status::before { animation: none; }
-      .js header h1, .js header .role, .js header .tagline, .js header nav, .js .socials { animation: none; }
-      .js .reveal { opacity: 1; transform: none; transition: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="spotlight" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"></div>
 
-  <div class="layout">
-    <header>
-      <div>
-        <h1>Avikam Jha</h1>
-        <p class="role">I build <span class="rotator">human-centered AI</span></p>
-        <p class="tagline">M.S. in Computer Engineering at ASU. I study how people and AI systems understand each other, from the features inside language models to the people who teach robots.</p>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Back to top">AJ<span>.</span></a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Résumé</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <nav aria-label="Sections">
-          <a href="#about" class="active">About</a>
-          <a href="#research">Research</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#resume">Résumé</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <section class="hero" id="top">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Avikam Jha</h1>
+      <p class="role">I build <span class="rotator">human-centered AI</span></p>
+      <p class="tagline">M.S. in Computer Engineering at ASU. I study how people and AI systems understand each other, from the features inside language models to the people who teach robots.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#research">See my work</a>
+        <a class="btn btn-ghost" href="#resume">Résumé</a>
       </div>
 
       <ul class="socials" aria-label="Social links">
@@ -235,7 +49,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
         </a></li>
       </ul>
-    </header>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </section>
 
     <main>
       <section id="about">
@@ -445,7 +262,6 @@
         <p>Designed and built by Avikam Jha. Inspired by the developers in <a class="link-arrow" href="https://github.com/emmabostian/developer-portfolios" target="_blank" rel="noopener">developer-portfolios</a>.</p>
       </footer>
     </main>
-  </div>
 
   <script>
     // Cursor spotlight
@@ -467,11 +283,13 @@
 
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Scroll progress bar
+    // Scroll progress bar, and a frosted top bar once you leave the hero
     const bar = document.querySelector('.progress');
+    const topbar = document.querySelector('.topbar');
     const setProgress = () => {
       const h = document.documentElement;
       bar.style.setProperty('--p', h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight));
+      topbar.classList.toggle('scrolled', h.scrollTop > 24);
     };
     window.addEventListener('scroll', setProgress, { passive: true });
     setProgress();
