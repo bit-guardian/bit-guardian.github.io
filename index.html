@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Avikam Jha | Human-Centered AI</title>
   <meta name="description" content="Avikam Jha is an M.S. Computer Engineering student at ASU who researches LLM interpretability and human workload in robot learning, with a background in DevOps, RTL design, verification, and physical design.">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -149,6 +150,36 @@
 
     footer { font-size: 0.8rem; color: var(--text-muted); padding-top: 64px; max-width: 420px; }
 
+    /* ---------- Motion ---------- */
+    .progress {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 2px;
+      background: linear-gradient(90deg, var(--accent), #818cf8);
+      transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+    }
+    .rotator { display: inline-block; color: var(--accent); transition: opacity .35s ease, transform .35s ease; }
+    .rotator.out { opacity: 0; transform: translateY(-8px); }
+
+    .js header h1, .js header .role, .js header .tagline, .js header nav, .js .socials {
+      animation: rise .9s cubic-bezier(.2, .7, .2, 1) both;
+    }
+    .js header .role { animation-delay: .1s; }
+    .js header .tagline { animation-delay: .2s; }
+    .js header nav { animation-delay: .3s; }
+    .js .socials { animation-delay: .4s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+
+    .js .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1), background .2s, box-shadow .2s;
+      transition-delay: var(--d, 0ms), var(--d, 0ms), 0ms, 0ms;
+    }
+    .js .reveal.in { opacity: 1; transform: none; }
+    .item:hover { box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.08), 0 0 0 1px rgba(94, 234, 212, 0.12), 0 12px 32px -16px rgba(94, 234, 212, 0.25); }
+    .tags li { transition: transform .2s; }
+    .tags li:hover { transform: translateY(-2px); }
+
+    @media (max-width: 1023px) { .role { min-height: 3.3em; } }
+
     /* ---------- Desktop: two columns, left side sticky ---------- */
     @media (min-width: 1024px) {
       .layout { grid-template-columns: 1fr 1.15fr; gap: 64px; padding: 0 48px; }
@@ -166,17 +197,20 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .status::before { animation: none; }
+      .js header h1, .js header .role, .js header .tagline, .js header nav, .js .socials { animation: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
 <body>
   <div class="spotlight" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
 
   <div class="layout">
     <header>
       <div>
         <h1>Avikam Jha</h1>
-        <p class="role">Human-Centered AI · Hardware · Infrastructure</p>
+        <p class="role">I build <span class="rotator">human-centered AI</span></p>
         <p class="tagline">M.S. in Computer Engineering at ASU. I study how people and AI systems understand each other, from the features inside language models to the people who teach robots.</p>
 
         <nav aria-label="Sections">
@@ -430,6 +464,41 @@
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
     document.querySelectorAll('main section').forEach(s => observer.observe(s));
+
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll progress bar
+    const bar = document.querySelector('.progress');
+    const setProgress = () => {
+      const h = document.documentElement;
+      bar.style.setProperty('--p', h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight));
+    };
+    window.addEventListener('scroll', setProgress, { passive: true });
+    setProgress();
+
+    // Fade content in as it scrolls into view, staggering items that arrive together
+    const revealer = new IntersectionObserver(entries => {
+      entries.filter(e => e.isIntersecting).forEach((entry, i) => {
+        entry.target.style.setProperty('--d', Math.min(i, 5) * 90 + 'ms');
+        entry.target.classList.add('in');
+        revealer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('#about p, .group-label, .item, .skills > div, .certs, #resume > p, .resumes li, #contact p, #contact .cta')
+      .forEach(el => { el.classList.add('reveal'); revealer.observe(el); });
+
+    // Rotate through the areas I work in
+    const rotator = document.querySelector('.rotator');
+    const roles = ['human-centered AI', 'interpretability tools for LLMs', 'chips from RTL to GDS', 'reliable cloud platforms'];
+    let role = 0;
+    if (!reduceMotion) setInterval(() => {
+      rotator.classList.add('out');
+      setTimeout(() => {
+        role = (role + 1) % roles.length;
+        rotator.textContent = roles[role];
+        rotator.classList.remove('out');
+      }, 350);
+    }, 2800);
   </script>
 </body>
 </html>
