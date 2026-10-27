@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <div class="spotlight" aria-hidden="true"></div>
@@ -120,9 +120,14 @@
   <main>
     <section id="about">
       <h2 class="section-title">About</h2>
+      <div class="about-grid">
+      <img class="portrait" src="images/avikam.jpg" width="640" height="640" alt="Portrait of Avikam Jha" loading="lazy" decoding="async">
+      <div>
       <p>I'm an <strong>M.S. student in Computer Engineering at Arizona State University</strong> (GPA 4.0), graduating in December 2026. My work spans three layers of computing: <strong>digital hardware</strong>, <strong>cloud infrastructure</strong>, and <strong>AI</strong>.</p>
       <p>On the hardware side, I write RTL, build coverage-driven testbenches, and take blocks through synthesis and place-and-route to clean signoff. Before grad school, I spent over two years at Park+, growing from intern to SDE 2 while running Kubernetes infrastructure in production. My thesis research is in human-centered AI, where I study LLM interpretability and the human workload behind robot learning.</p>
       <p>Working across these layers lets me reason about a system from the transistor to the cluster to the model, and I enjoy roles where that breadth is useful.</p>
+      </div>
+      </div>
     </section>
 
     <section id="experience">
@@ -472,7 +477,7 @@
         revealer.unobserve(entry.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.track, #about p, .section-intro, .filters, .group-label, .item, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
+    document.querySelectorAll('.track, .portrait, #about p, .section-intro, .filters, .group-label, .item, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
       .forEach(el => { el.classList.add('reveal'); revealer.observe(el); });
 
     // Project filter: show one track's projects, or all of them

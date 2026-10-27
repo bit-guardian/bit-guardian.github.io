@@ -178,6 +178,19 @@ strong, .hl { color: var(--text-strong); font-weight: 500; }
 
 footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
 .section-intro { margin-bottom: 8px; }
+
+/* ---------- About photo ---------- */
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 28px; justify-items: center; }
+.about-grid > div { justify-self: stretch; }
+.portrait {
+  display: block; width: 168px; height: 168px; object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(94, 234, 212, 0.45), 0 0 0 7px rgba(94, 234, 212, 0.06), 0 20px 50px -18px rgba(94, 234, 212, 0.45);
+}
+@media (min-width: 768px) {
+  .about-grid { grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
+  .portrait { width: 200px; height: 200px; }
+}
 .resumes + .group-label { margin-top: 24px; }
 
 /* ---------- What I do: three track cards ---------- */
