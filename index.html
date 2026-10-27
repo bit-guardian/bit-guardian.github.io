@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO: replace [Your Name] everywhere in this file (Ctrl+H) -->
-  <title>[Your Name] — Human-Centered AI</title>
-  <meta name="description" content="MS Computer Engineering student at ASU researching human-centered AI: LLM interpretability and human workload in robot learning.">
+  <title>Avikam Jha — Human-Centered AI</title>
+  <meta name="description" content="Avikam Jha — MS Computer Engineering at ASU. Research in LLM interpretability and human workload in robot learning; background in DevOps, RTL design, verification and physical design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,6 +13,7 @@
       --bg: #0b1120;
       --bg-raised: #111a2e;
       --text: #94a3b8;
+      --text-muted: #64748b;
       --text-strong: #e2e8f0;
       --accent: #5eead4;
       --accent-soft: rgba(94, 234, 212, 0.1);
@@ -51,12 +51,12 @@
     header { padding: 64px 0 32px; }
     h1 { color: var(--text-strong); font-size: clamp(2.4rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
     .role { color: var(--text-strong); font-size: 1.2rem; font-weight: 500; margin-top: 10px; }
-    .tagline { max-width: 340px; margin-top: 16px; }
+    .tagline { max-width: 360px; margin-top: 16px; }
 
-    nav { display: none; margin-top: 56px; }
+    nav { display: none; margin-top: 48px; }
     nav a {
       display: flex; align-items: center; gap: 16px;
-      padding: 10px 0;
+      padding: 8px 0;
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--text);
       transition: color .2s;
@@ -83,6 +83,7 @@
       color: var(--text-strong);
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
     }
+    .group-label { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); margin: 28px 0 8px; }
     p + p { margin-top: 16px; }
     strong, .hl { color: var(--text-strong); font-weight: 500; }
 
@@ -94,11 +95,14 @@
       transition: background .2s, box-shadow .2s;
     }
     .item:hover { background: var(--bg-raised); box-shadow: inset 0 1px 0 rgba(148,163,184,0.08); }
-    .item-meta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #64748b; padding-top: 3px; }
+    .item-meta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding-top: 3px; }
     .item h3 { color: var(--text-strong); font-size: 1rem; font-weight: 500; line-height: 1.4; }
     .item h3 .sub { color: var(--text); }
     .item:hover h3 { color: var(--accent); }
     .item p { font-size: 0.92rem; margin-top: 6px; }
+    .item .authors { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+    .item ul.points { font-size: 0.92rem; margin: 6px 0 0 18px; }
+    .item ul.points li + li { margin-top: 4px; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; list-style: none; }
     .tags li {
@@ -110,13 +114,27 @@
     .status {
       display: inline-flex; align-items: center; gap: 6px;
       font-family: var(--mono); font-size: 0.7rem; color: var(--accent);
-      margin-left: 8px; vertical-align: middle;
+      margin-left: 8px; vertical-align: middle; white-space: nowrap;
     }
     .status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
     @keyframes pulse { 50% { opacity: .3; } }
 
     .skills { display: grid; grid-template-columns: 1fr; gap: 20px; }
     .skills h4 { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--accent); margin-bottom: 8px; }
+    .skills .tags { margin-top: 0; }
+
+    .certs { margin-top: 28px; font-size: 0.92rem; }
+
+    .resumes { display: grid; grid-template-columns: 1fr; gap: 10px; list-style: none; }
+    .resumes a {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-strong); font-size: 0.92rem; font-weight: 500;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+    .resumes a span { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
+    .resumes a:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 
     .cta {
       display: inline-flex; align-items: center; gap: 8px;
@@ -129,21 +147,21 @@
     .link-arrow { color: var(--text-strong); font-weight: 500; border-bottom: 1px solid var(--border); transition: color .2s, border-color .2s; }
     .link-arrow:hover { color: var(--accent); border-color: var(--accent); }
 
-    footer { font-size: 0.8rem; color: #64748b; padding-top: 64px; max-width: 420px; }
+    footer { font-size: 0.8rem; color: var(--text-muted); padding-top: 64px; max-width: 420px; }
 
     /* ---------- Desktop: two columns, left side sticky ---------- */
     @media (min-width: 1024px) {
-      .layout { grid-template-columns: 1fr 1fr; gap: 64px; padding: 0 48px; }
+      .layout { grid-template-columns: 1fr 1.15fr; gap: 64px; padding: 0 48px; }
       header {
         position: sticky; top: 0; height: 100vh;
         display: flex; flex-direction: column; justify-content: space-between;
-        padding: 96px 0;
+        padding: 96px 0 72px;
       }
       nav { display: block; }
       main { padding-top: 48px; }
       .section-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
       .item { grid-template-columns: 140px 1fr; gap: 24px; }
-      .skills { grid-template-columns: 1fr 1fr; }
+      .skills, .resumes { grid-template-columns: 1fr 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -157,31 +175,29 @@
   <div class="layout">
     <header>
       <div>
-        <h1>[Your Name]</h1>
-        <p class="role">Human-Centered AI Researcher</p>
-        <p class="tagline">MS Computer Engineering at ASU. I study how people and AI systems understand each other — from the inside of language models to the humans teaching robots.</p>
+        <h1>Avikam Jha</h1>
+        <p class="role">Human-Centered AI · Hardware · Infrastructure</p>
+        <p class="tagline">MS Computer Engineering at ASU. I study how people and AI systems understand each other — from the features inside language models to the humans teaching robots.</p>
 
         <nav aria-label="Sections">
           <a href="#about" class="active">About</a>
           <a href="#research">Research</a>
           <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
+          <a href="#resume">Résumé</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
 
-      <!-- TODO: put your real profile URLs in the hrefs below -->
       <ul class="socials" aria-label="Social links">
-        <li><a href="https://github.com/[username]" target="_blank" rel="noopener" aria-label="GitHub">
+        <li><a href="https://github.com/bit-guardian" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
         </a></li>
-        <li><a href="https://www.linkedin.com/in/[username]" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <li><a href="https://www.linkedin.com/in/avikamjha/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
         </a></li>
-        <li><a href="https://scholar.google.com/citations?user=[id]" target="_blank" rel="noopener" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.24 13.77 0 9.5 12 0l12 9.5-5.24 4.27a7 7 0 0 0-13.52 0ZM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/></svg>
-        </a></li>
-        <li><a href="mailto:[you@example.com]" aria-label="Email">
+        <li><a href="mailto:avikamjh@asu.edu" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
         </a></li>
       </ul>
@@ -190,96 +206,209 @@
     <main>
       <section id="about">
         <h2 class="section-title">About</h2>
-        <p>I'm a <strong>Master's student in Computer Engineering at Arizona State University</strong>, graduating in December 2026. My research sits in <strong>human-centered AI</strong>: making model behavior legible to the people who rely on it, and making the human side of machine learning less costly.</p>
-        <p>Right now that means two threads — opening up large language models with <span class="hl">sparse autoencoders</span> to find interpretable features, and measuring the <span class="hl">human workload</span> behind collecting demonstrations for robot learning.</p>
-        <p>Before grad school I spent <strong>2+ years in DevOps</strong>, running Kubernetes infrastructure in production. I also have hands-on experience across the hardware stack — <strong>RTL design, verification, and physical design</strong> — so I'm comfortable anywhere from silicon to cluster to model.</p>
+        <p>I'm a <strong>thesis-track M.S. student in Computer Engineering at Arizona State University</strong> (GPA 4.0), graduating in December 2026. My research is in <strong>human-centered AI</strong>: making model behavior legible to the people who rely on it, and making the human side of robot learning less costly.</p>
+        <p>My thesis, advised by a committee of Prof. Lindsay Sanneman, Prof. Ransalu Senanayake and Prof. Nakul Gopalan, has two threads — using <span class="hl">sparse autoencoders</span> to help people predict when an LLM will fail at planning, and measuring <span class="hl">operator workload</span> across the ways we collect robot demonstration data.</p>
+        <p>Before grad school I spent <strong>over two years at Park+</strong>, growing from intern to SDE 2 while running Kubernetes infrastructure for a 60+ microservice platform. At ASU I've also taken chips from <strong>RTL to GDS</strong> — designing, verifying and physically implementing a sparse GCN accelerator in 7nm. I'm comfortable anywhere from silicon to cluster to model.</p>
       </section>
 
       <section id="research">
         <h2 class="section-title">Research</h2>
 
         <div class="item">
-          <div class="item-meta">[Start] — Now</div>
+          <div class="item-meta">2026</div>
           <div>
-            <h3>LLM Interpretability with Sparse Autoencoders <span class="status">ongoing</span></h3>
-            <p>Training sparse autoencoders on language-model activations to decompose them into human-interpretable features, and studying how those features can help people understand and anticipate model behavior.</p>
-            <ul class="tags"><li>PyTorch</li><li>Transformers</li><li>Mechanistic Interpretability</li><li>SAEs</li></ul>
+            <h3>Human Workload Across Robot Demonstration Data Collection Modalities <span class="status">ongoing</span></h3>
+            <p>An IRB-approved, within-subjects study comparing five ways of collecting robot-learning data — SpaceMouse, leader-arm and VR teleoperation, head-mounted video, and data gloves — measuring operator workload, fatigue and ergonomics on cloth-folding and cup-stacking tasks.</p>
+            <ul class="tags"><li>Human–Robot Interaction</li><li>User studies</li><li>Teleoperation</li><li>Robot learning</li></ul>
           </div>
         </div>
 
         <div class="item">
-          <div class="item-meta">[Start] — Now</div>
+          <div class="item-meta">2025 — 2026</div>
           <div>
-            <h3>Human Workload in Robot-Learning Data Collection <span class="status">ongoing</span></h3>
-            <p>Investigating the physical and cognitive load on people who collect demonstration data for robot learning, and how interface and protocol choices affect both operator workload and the quality of the data they produce.</p>
-            <ul class="tags"><li>Human–Robot Interaction</li><li>User Studies</li><li>Imitation Learning</li><li>Workload</li></ul>
+            <h3>Interpretability of LLM Planning via Sparse Autoencoders <span class="status">ongoing</span></h3>
+            <p>A SAELens + TransformerLens pipeline that extracts SAE features from an LLM solving automated-planning problems, surfaces top-activating prompts, and auto-labels features. A human-in-the-loop study tests whether seeing those feature labels helps people predict when the model will fail.</p>
+            <ul class="tags"><li>SAELens</li><li>TransformerLens</li><li>Sparse autoencoders</li><li>PDDL planning</li></ul>
           </div>
         </div>
-        <!-- TODO: add a paper/poster/repo link per project, e.g. <a class="link-arrow" href="...">Paper ↗</a> -->
+
+        <p class="group-label">// publications</p>
+        <div class="item">
+          <div class="item-meta">Sep 2026</div>
+          <div>
+            <h3>Robotics Data Collection Modality Survey <span class="sub">· HRI 2027 (under review)</span></h3>
+            <p class="authors"><strong>A. Jha</strong>, R. Sadhwani, L. Sanneman · Submitted to ACM/IEEE HRI 2027, Theory and Methods</p>
+            <p>A PRISMA systematic review screening 685 records down to 27 post-2022 studies (392 participants) that compare teleoperation, wearable capture and human-video data collection — with a modality taxonomy and a nine-gap analysis of the experiments the field still needs.</p>
+          </div>
+        </div>
       </section>
 
       <section id="experience">
         <h2 class="section-title">Experience</h2>
 
         <div class="item">
-          <div class="item-meta">[Start] — Dec 2026</div>
+          <div class="item-meta">Mar 2022 — Jul 2024</div>
           <div>
-            <h3>MS, Computer Engineering <span class="sub">· Arizona State University</span></h3>
-            <p>Focus on human-centered AI. Graduate research in LLM interpretability and human factors in robot learning.</p>
+            <h3>SDE Intern → SDE 1 → SDE 2 <span class="sub">· Park+, Gurugram</span></h3>
+            <ul class="points">
+              <li>Built and operated cloud infrastructure for a 60+ microservice platform running 100+ pods on Kubernetes.</li>
+              <li>Led the AWS → GCP migration of Elasticsearch, Redis, MongoDB and Kubernetes with under 2 hours of downtime, cutting costs 30% and improving performance 25%.</li>
+              <li>Automated 95% of environment provisioning with Terraform, Ansible and Python — from days to under 45 minutes.</li>
+              <li>Built observability with Prometheus, Grafana, ELK and OpenTelemetry; defined SLOs and joined on-call, cutting MTTD 30% and MTTR 40%.</li>
+              <li>Moved 400+ credentials into HashiCorp Vault and remediated 98% of high-severity findings for SOC 2 audits.</li>
+            </ul>
+            <ul class="tags"><li>Kubernetes</li><li>AWS</li><li>GCP</li><li>Terraform</li><li>Vault</li><li>Prometheus</li></ul>
           </div>
         </div>
 
         <div class="item">
-          <div class="item-meta">[Start] — [End]</div>
+          <div class="item-meta">Aug 2025 — May 2026</div>
           <div>
-            <h3>DevOps Engineer <span class="sub">· [Company]</span></h3>
-            <p>Two-plus years building and operating Kubernetes infrastructure: cluster provisioning, CI/CD pipelines, observability, and keeping production services reliable.</p>
-            <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>CI/CD</li><li>Linux</li></ul>
+            <h3>Graduate Service Assistant <span class="sub">· Arizona State University</span></h3>
+            <p>Evaluated EEE 120 digital design labs (adders, ALUs, counters, FSMs) and graded EEE 202 circuit analysis, checking CAD and SPICE simulations for correctness and timing.</p>
           </div>
         </div>
 
         <div class="item">
-          <div class="item-meta">Hardware</div>
+          <div class="item-meta">May — Aug 2025</div>
           <div>
-            <h3>RTL, Verification &amp; Physical Design</h3>
-            <p>Hands-on digital design flow from RTL through verification to physical implementation — writing synthesizable HDL, building testbenches, and taking designs through place-and-route.</p>
-            <ul class="tags"><li>Verilog / SystemVerilog</li><li>Testbenches</li><li>Synthesis</li><li>Place &amp; Route</li></ul>
+            <h3>Research Aide, Intro to Materials Science <span class="sub">· Arizona State University</span></h3>
+            <p>Authored 40+ assignment questions and technical documentation across 10+ semiconductor topics for a 120+ student cohort.</p>
           </div>
         </div>
 
-        <a class="cta" href="resume.pdf" target="_blank" rel="noopener">View full résumé ↗</a>
+        <div class="item">
+          <div class="item-meta">Oct 2021 — Feb 2022</div>
+          <div>
+            <h3>Software Developer Intern <span class="sub">· Winjit Technologies, Nashik</span></h3>
+            <p>Migrated a client's on-premises infrastructure to Kubernetes on Microsoft Azure, redesigning the deployment pipeline to cut deployment time by 20%.</p>
+          </div>
+        </div>
+
+        <p class="group-label">// education</p>
+        <div class="item">
+          <div class="item-meta">Aug 2024 — Dec 2026</div>
+          <div>
+            <h3>M.S. Computer Engineering (Thesis) <span class="sub">· Arizona State University</span></h3>
+            <p>GPA 4.0. Artificial Intelligence, Foundations of Algorithms, Probability &amp; Random Processes, Data Processing at Scale, Computer Architecture, VLSI Design, SoC Design, Digital Verification &amp; Test.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">Aug 2022</div>
+          <div>
+            <h3>B.E. Electronics &amp; Communication Engineering <span class="sub">· NIT Delhi</span></h3>
+            <p>Pattern Recognition &amp; Machine Learning, Neural Networks, Data Structures &amp; Algorithms, Digital Signal Processing, Control Theory.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <p class="group-label" style="margin-top:0">// silicon</p>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Sparse GCN Inference Accelerator, RTL to GDS</h3>
+            <p>Architected a transformation → aggregation → argmax datapath using COO sparse accumulation, then took the 16,590-cell block through synthesis, CTS and place-and-route in ASAP7 7nm — <strong>zero setup/hold violations across 2,196 paths</strong>, 5.26 mW, 88.5 ns latency against a 100 ns budget, clean DRC/LVS. Verified the same testbench at RTL, post-synthesis and post-layout.</p>
+            <ul class="tags"><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>Virtuoso</li><li>ASAP7</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">Aug — Dec 2025</div>
+          <div>
+            <h3>5-Stage Pipelined 32-bit CPU</h3>
+            <p>A RISC-style core with a forwarding unit across three bypass networks, hazard detection for five stall conditions, load-linked/store-conditional atomics, and a CAM for single-cycle cache tag lookup.</p>
+            <ul class="tags"><li>SystemVerilog</li><li>Micro-architecture</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>VeriChip: Verification Plans &amp; Functional Coverage</h3>
+            <p>Spec-mapped test and coverage plans for a memory-mapped peripheral; exhaustive FSM and 16-command ALU verification, four covergroups with 3-way crosses, and a C reference model linked through PLI.</p>
+            <ul class="tags"><li>SystemVerilog</li><li>Coverage</li><li>PLI</li><li>C</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Standard Cell Layout &amp; Parasitic Extraction</h3>
+            <p>Laid out a 6x-drive buffer to the ASAP7 7.5-track architecture with clean DRC/LVS, then used Calibre xACT 3D extraction to explain pre- vs post-layout delay growth with Elmore analysis.</p>
+            <ul class="tags"><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li></ul>
+          </div>
+        </div>
+
+        <p class="group-label">// ml &amp; systems</p>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Custom CUDA Kernels for PyTorch</h3>
+            <p>Forward and backward CUDA kernels for Linear and ReLU integrated into PyTorch autograd, plus a framework-free version exposed to Python through ctypes.</p>
+            <ul class="tags"><li>CUDA</li><li>C++</li><li>PyTorch</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">2025</div>
+          <div>
+            <h3>Cache Replacement &amp; Out-of-Order Study</h3>
+            <p>Implemented the LRU-IPV PseudoLRU policy as a gem5 SimObject and swept pipeline widths, measuring a 1.7x slowdown from 8-wide to 2-wide out-of-order cores.</p>
+            <ul class="tags"><li>gem5</li><li>C++</li><li>Python</li></ul>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-meta">AI for Ops</div>
+          <div>
+            <h3>Kubernetes AI Troubleshooting Agent &amp; MCP Server</h3>
+            <p>An agent that diagnoses and fixes cluster issues — validating AI output before any action — and a Python MCP server connecting AI assistants to internal tools and runbooks.</p>
+            <ul class="tags"><li>MCP</li><li>LLM agents</li><li>Kubernetes</li><li>Python</li></ul>
+          </div>
+        </div>
       </section>
 
       <section id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills">
           <div>
-            <h4>// ai &amp; research</h4>
-            <ul class="tags"><li>Python</li><li>PyTorch</li><li>Interpretability</li><li>HRI</li><li>User studies</li></ul>
+            <h4>// ml &amp; research</h4>
+            <ul class="tags"><li>PyTorch</li><li>SAELens</li><li>TransformerLens</li><li>CUDA</li><li>RL</li><li>PDDL</li><li>User studies</li><li>PRISMA</li></ul>
           </div>
           <div>
             <h4>// infrastructure</h4>
-            <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>CI/CD</li><li>Cloud</li><li>Linux</li></ul>
+            <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>AWS</li><li>GCP</li><li>Azure</li><li>Argo CD</li><li>Prometheus</li></ul>
           </div>
           <div>
             <h4>// hardware</h4>
-            <ul class="tags"><li>Verilog</li><li>SystemVerilog</li><li>Verification</li><li>Physical design</li></ul>
+            <ul class="tags"><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li><li>gem5</li></ul>
           </div>
           <div>
             <h4>// languages</h4>
-            <ul class="tags"><li>Python</li><li>C++</li><li>Bash</li></ul>
+            <ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Go</li><li>Bash</li><li>Tcl</li></ul>
           </div>
         </div>
+        <p class="certs"><strong>Certifications:</strong> AWS Solutions Architect – Associate · HashiCorp Terraform Associate · AWS Cloud Practitioner · CKA (in progress)</p>
+      </section>
+
+      <section id="resume">
+        <h2 class="section-title">Résumé</h2>
+        <p style="margin-bottom:20px">Pick the version that fits your role:</p>
+        <ul class="resumes">
+          <li><a href="resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener">AI / ML Research <span>PDF ↗</span></a></li>
+          <li><a href="resume/avikam-jha-devops.pdf" target="_blank" rel="noopener">DevOps / SRE <span>PDF ↗</span></a></li>
+          <li><a href="resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener">RTL Design <span>PDF ↗</span></a></li>
+          <li><a href="resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener">Design Verification <span>PDF ↗</span></a></li>
+          <li><a href="resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener">Physical Design <span>PDF ↗</span></a></li>
+        </ul>
       </section>
 
       <section id="contact">
         <h2 class="section-title">Contact</h2>
-        <p>I'm finishing my MS in December 2026 and looking for <strong>research or engineering roles in human-centered AI, interpretability, and ML infrastructure</strong>. If that overlaps with what you're building, I'd love to talk.</p>
-        <a class="cta" href="mailto:[you@example.com]">Say hello →</a>
+        <p>I finish my M.S. in December 2026 and I'm looking for <strong>roles in human-centered AI and interpretability, ML infrastructure, and digital hardware</strong> (RTL, verification, physical design). If that overlaps with what you're building, I'd love to talk.</p>
+        <a class="cta" href="mailto:avikamjh@asu.edu">avikamjh@asu.edu →</a>
       </section>
 
       <footer>
-        <p>Designed and built by [Your Name]. Inspired by the developers in <a class="link-arrow" href="https://github.com/emmabostian/developer-portfolios" target="_blank" rel="noopener">developer-portfolios</a>.</p>
+        <p>Designed and built by Avikam Jha. Inspired by the developers in <a class="link-arrow" href="https://github.com/emmabostian/developer-portfolios" target="_blank" rel="noopener">developer-portfolios</a>.</p>
       </footer>
     </main>
   </div>
