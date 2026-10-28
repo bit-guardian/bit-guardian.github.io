@@ -41,13 +41,14 @@ body[data-track="ai"] [data-tracks]:not([data-tracks~="ai"]) { display: none; }
 /* ---------- Top bar ---------- */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 20;
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  /* Three columns with equal sides, so the switch sits at the true center whatever the logo and menu widths */
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;
   padding: 14px 32px;
   border-bottom: 1px solid transparent;
   transition: background .3s, border-color .3s;
 }
 .topbar.scrolled { background: rgba(11, 17, 32, 0.8); backdrop-filter: blur(10px); border-color: var(--border); }
-.brand { font-family: var(--mono); font-size: 0.95rem; font-weight: 500; color: var(--text-strong); letter-spacing: 0.04em; flex-shrink: 0; }
+.brand { justify-self: start; font-family: var(--mono); font-size: 0.95rem; font-weight: 500; color: var(--text-strong); letter-spacing: 0.04em; flex-shrink: 0; }
 .brand span { color: var(--accent); }
 
 .switch {
@@ -67,7 +68,7 @@ body[data-track="ai"] [data-tracks]:not([data-tracks~="ai"]) { display: none; }
 .switch button[data-set="devops"][aria-pressed="true"] { background: var(--devops); }
 .switch button[data-set="ai"][aria-pressed="true"] { background: var(--ai); }
 
-.topbar nav { display: none; gap: 22px; }
+.topbar nav { display: none; gap: 20px; justify-self: end; }
 .topbar nav a {
   position: relative; padding: 4px 0;
   font-size: 0.8rem; font-weight: 500; white-space: nowrap;
@@ -306,7 +307,7 @@ footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--
   .tracks { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .skills { grid-template-columns: repeat(3, 1fr); }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1320px) {
   .topbar nav { display: flex; }
 }
 @media (max-width: 640px) {

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="/style.css?v=7">
+  <link rel="stylesheet" href="/style.css?v=8">
 </head>
 <body data-track="all">
   <div class="spotlight" aria-hidden="true"></div>
@@ -105,7 +105,7 @@
       <div class="item" style="--c: var(--devops)">
         <div class="item-meta">Mar 2022 - Jul 2024</div>
         <div>
-          <h3>SDE Intern → SDE 1 → SDE 2 <span class="sub">· Park+, Gurugram</span></h3>
+          <h3>SDE Intern → SDE 1 → SDE 2 (DevOps) <span class="sub">· Park+, Gurugram</span></h3>
           <p class="impact">30% lower cloud cost · under 2 hours of migration downtime · 40% faster incident resolution</p>
           <p>Ran production cloud infrastructure for a 60+ microservice parking and mobility platform.</p>
           <details class="more">
@@ -329,7 +329,7 @@
           <div class="card-top"><span class="card-kicker">AI for Ops</span><span class="card-date">Jan 2026 - May 2026</span></div>
           <h3>Kubernetes AI Troubleshooting Agent</h3>
           <p class="impact">About 40% less manual triage</p>
-          <p>An agent that diagnoses and fixes cluster issues, validating its own output before acting.</p>
+          <p>An agent that reads cluster state, logs, and alerts, diagnoses issues, and proposes fixes, validating every action before it runs.</p>
           <ul class="tags"><li>Kubernetes</li><li>LLM agents</li><li>Python</li></ul>
         </article>
 
@@ -337,8 +337,24 @@
           <div class="card-top"><span class="card-kicker">AI for Ops</span><span class="card-date">Jan 2026 - May 2026</span></div>
           <h3>MCP Server for Engineering Tools</h3>
           <p class="impact">About 30% fewer repetitive tasks</p>
-          <p>A Python MCP server that connects AI assistants to internal tools and runbooks.</p>
+          <p>A Python Model Context Protocol server that connects AI assistants to internal tools, docs, and runbooks.</p>
           <ul class="tags"><li>MCP</li><li>Python</li><li>Automation</li></ul>
+        </article>
+
+        <article class="card" data-tracks="devops ai" style="--c: var(--devops)">
+          <div class="card-top"><span class="card-kicker">Observability</span><span class="card-date">Jan 2026 - May 2026</span></div>
+          <h3>AI Observability Platform</h3>
+          <p class="impact">About 35% faster issue detection</p>
+          <p>Metrics, tracing, dashboards, and alerting for AI workloads.</p>
+          <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li></ul>
+        </article>
+
+        <article class="card" data-tracks="devops ai" style="--c: var(--devops)">
+          <div class="card-top"><span class="card-kicker">AI for Ops</span><span class="card-date">Jan 2026 - May 2026</span></div>
+          <h3>LLM-Powered MongoDB Query Tool</h3>
+          <p class="impact">Plain-English questions to safe database queries</p>
+          <p>Turns plain-English questions into MongoDB queries, with checks that block unsafe operations, so non-technical teams can pull their own data.</p>
+          <ul class="tags"><li>LLMs</li><li>MongoDB</li><li>Python</li></ul>
         </article>
 
         </div>
@@ -366,7 +382,7 @@
           <div class="card-top"><span class="card-kicker">LLM</span><span class="card-date">Jan 2026 - May 2026</span></div>
           <h3>RAG Pipeline &amp; Local LLM Serving</h3>
           <p class="impact">About 25% better relevance · under 200 ms</p>
-          <p>A retrieval pipeline over a locally served LLM with fast responses.</p>
+          <p>A retrieval pipeline evaluated against a test set, plus a local LLM tuned and deployed in Docker on GPU hardware.</p>
           <ul class="tags"><li>RAG</li><li>LangChain</li><li>LLM serving</li></ul>
         </article>
 
@@ -435,11 +451,11 @@
         </div>
         <div data-tracks="devops" style="--c: var(--devops)">
           <h4>// devops &amp; cloud</h4>
-          <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>Ansible</li><li>AWS</li><li>GCP</li><li>Azure</li><li>Argo CD</li><li>GitHub Actions</li></ul>
+          <ul class="tags"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Terraform</li><li>Ansible</li><li>AWS</li><li>GCP</li><li>Azure</li><li>CloudFormation</li><li>Argo CD</li><li>GitHub Actions</li><li>GitLab CI</li><li>Jenkins</li></ul>
         </div>
         <div data-tracks="devops" style="--c: var(--devops)">
           <h4>// observability &amp; security</h4>
-          <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li><li>ELK</li><li>Datadog</li><li>HashiCorp Vault</li></ul>
+          <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li><li>ELK</li><li>Datadog</li><li>PagerDuty</li><li>HashiCorp Vault</li><li>Trivy</li><li>Snyk</li></ul>
         </div>
         <div data-tracks="ai" style="--c: var(--ai)">
           <h4>// ai &amp; ml</h4>
@@ -450,7 +466,7 @@
           <ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Tcl</li><li>Go</li><li>Bash</li><li>gem5</li><li>Git</li><li>Linux</li></ul>
         </div>
       </div>
-      <p class="certs" data-tracks="devops"><strong>Certifications:</strong> AWS Certified Solutions Architect (Associate) · HashiCorp Terraform Associate · AWS Cloud Practitioner · CKA (in progress)</p>
+      <p class="certs" data-tracks="devops"><strong>Certifications:</strong> AWS Certified Solutions Architect (Associate) · HashiCorp Terraform Associate · AWS Certified Cloud Practitioner · Istio Fundamentals</p>
     </section>
 
     <section id="resume">
