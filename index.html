@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="/style.css?v=7">
 </head>
 <body data-track="all">
   <div class="spotlight" aria-hidden="true"></div>
@@ -19,6 +19,7 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Back to top">AJ<span>.</span></a>
     <div class="switch" role="group" aria-label="Tailor this page to a role">
+      <span class="switch-label">View</span>
       <button type="button" data-set="all" aria-pressed="true">All</button>
       <button type="button" data-set="silicon" aria-pressed="false">Silicon</button>
       <button type="button" data-set="devops" aria-pressed="false">DevOps</button>
@@ -37,21 +38,13 @@
   <section class="hero" id="top">
     <p class="eyebrow">Hello, I'm</p>
     <h1>Avikam Jha</h1>
+    <div class="pills" role="group" aria-label="Show one track">
+      <button type="button" class="pill" data-set="silicon" aria-pressed="false" style="--c: var(--silicon)"><strong>Silicon</strong> RTL · DV · PD</button>
+      <button type="button" class="pill" data-set="devops" aria-pressed="false" style="--c: var(--devops)"><strong>DevOps</strong> Platform · SRE</button>
+      <button type="button" class="pill" data-set="ai" aria-pressed="false" style="--c: var(--ai)"><strong>AI/ML</strong> Engineering · Research</button>
+    </div>
     <p class="role">I build <span class="rotator">chips from RTL to GDS</span></p>
     <p class="tagline">M.S. in Computer Engineering at Arizona State University. I design and verify chips, run production cloud platforms, and build AI systems.</p>
-
-    <p class="chooser-label">What are you hiring for?</p>
-    <div class="chooser">
-      <button type="button" class="choice" data-set="silicon" style="--c: var(--silicon)">
-        <strong>Silicon</strong><span>RTL · DV · PD</span>
-      </button>
-      <button type="button" class="choice" data-set="devops" style="--c: var(--devops)">
-        <strong>DevOps</strong><span>Platform · SRE</span>
-      </button>
-      <button type="button" class="choice" data-set="ai" style="--c: var(--ai)">
-        <strong>AI/ML</strong><span>Engineering · Research</span>
-      </button>
-    </div>
     <div class="hero-actions">
       <a class="btn btn-primary" id="hero-resume" href="#resume">Résumés</a>
       <a class="btn btn-ghost" href="#contact">Get in touch</a>
@@ -74,7 +67,7 @@
     <section id="about">
       <h2 class="section-title">About</h2>
       <div class="about-grid">
-        <img class="portrait" src="images/avikam.jpg" width="640" height="640" alt="Portrait of Avikam Jha" loading="lazy" decoding="async">
+        <img class="portrait" src="/images/avikam.jpg" width="640" height="640" alt="Portrait of Avikam Jha" loading="lazy" decoding="async">
         <div>
           <p>I'm an <strong>M.S. Computer Engineering student at Arizona State University</strong> (GPA 4.0), graduating in December 2026. I work across three layers of computing: I design and verify <strong>digital hardware</strong>, I spent over two years running <strong>production cloud infrastructure</strong> at Park+, and my thesis research is in <strong>human-centered AI</strong>.</p>
           <p>That range lets me reason about a system from the transistor to the cluster to the model.</p>
@@ -181,7 +174,10 @@
 
     <section id="projects">
       <h2 class="section-title">Projects</h2>
-      <div class="cards">
+
+      <div class="project-group" data-tracks="silicon" style="--c: var(--silicon)">
+        <div class="group-head"><h3>Silicon <span class="count"></span></h3><p>RTL · DV · PD</p></div>
+        <div class="cards">
 
         <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">RTL · DV · PD</span><span class="card-date">Jan 2025 - May 2025</span></div>
@@ -308,6 +304,12 @@
           <ul class="tags"><li>UVM</li><li>SVA</li><li>RISC-V</li></ul>
         </article>
 
+        </div>
+      </div>
+
+      <div class="project-group" data-tracks="devops ai" style="--c: var(--devops)">
+        <div class="group-head"><h3>DevOps <span class="count"></span></h3><p>Platform · SRE · Cloud</p></div>
+        <div class="cards">
         <article class="card" data-tracks="devops" style="--c: var(--devops)">
           <div class="card-top"><span class="card-kicker">Cloud migration</span><span class="card-date">Mar 2022 - Jul 2024</span></div>
           <h3>AWS-to-GCP Platform Migration</h3>
@@ -339,6 +341,12 @@
           <ul class="tags"><li>MCP</li><li>Python</li><li>Automation</li></ul>
         </article>
 
+        </div>
+      </div>
+
+      <div class="project-group" data-tracks="ai" style="--c: var(--ai)">
+        <div class="group-head"><h3>AI/ML <span class="count"></span></h3><p>Engineering · Research</p></div>
+        <div class="cards">
         <article class="card" data-tracks="ai" style="--c: var(--ai)">
           <div class="card-top"><span class="card-kicker">GPU</span><span class="card-date">Jan 2025 - May 2025</span></div>
           <h3>Custom CUDA Kernels for PyTorch</h3>
@@ -376,6 +384,7 @@
           </details>
           <ul class="tags"><li>PDDL</li><li>Search</li><li>Python</li></ul>
         </article>
+        </div>
       </div>
     </section>
 
@@ -447,11 +456,11 @@
     <section id="resume">
       <h2 class="section-title">Résumés</h2>
       <ul class="resumes">
-        <li data-tracks="silicon"><a href="resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">RTL Design <span>PDF ↗</span></a></li>
-        <li data-tracks="silicon"><a href="resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">Design Verification <span>PDF ↗</span></a></li>
-        <li data-tracks="silicon"><a href="resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">Physical Design <span>PDF ↗</span></a></li>
-        <li data-tracks="devops"><a href="resume/avikam-jha-devops.pdf" target="_blank" rel="noopener" style="--c: var(--devops)">DevOps / SRE <span>PDF ↗</span></a></li>
-        <li data-tracks="ai"><a href="resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener" style="--c: var(--ai)">AI / ML <span>PDF ↗</span></a></li>
+        <li data-tracks="silicon"><a href="/resume/avikam-jha-rtl-design.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">RTL Design <span>PDF ↗</span></a></li>
+        <li data-tracks="silicon"><a href="/resume/avikam-jha-design-verification.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">Design Verification <span>PDF ↗</span></a></li>
+        <li data-tracks="silicon"><a href="/resume/avikam-jha-physical-design.pdf" target="_blank" rel="noopener" style="--c: var(--silicon)">Physical Design <span>PDF ↗</span></a></li>
+        <li data-tracks="devops"><a href="/resume/avikam-jha-devops.pdf" target="_blank" rel="noopener" style="--c: var(--devops)">DevOps / SRE <span>PDF ↗</span></a></li>
+        <li data-tracks="ai"><a href="/resume/avikam-jha-ai-ml.pdf" target="_blank" rel="noopener" style="--c: var(--ai)">AI / ML <span>PDF ↗</span></a></li>
       </ul>
     </section>
 
@@ -505,7 +514,7 @@
         revealer.unobserve(entry.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.portrait, #about p, .track, .section-intro, .group-label, .item, .card, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
+    document.querySelectorAll('.portrait, #about p, .track, .section-intro, .group-label, .group-head, .item, .card, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
       .forEach(el => { el.classList.add('reveal'); revealer.observe(el); });
 
     // Track switch: tailor the whole page to one role, and remember it in the URL
@@ -523,12 +532,12 @@
       devops: {
         phrases: ['reliable cloud platforms', 'Kubernetes infrastructure at scale', 'CI/CD pipelines that ship safely', 'observability that catches issues early'],
         roles: 'DevOps, site reliability, and platform engineering',
-        resume: { href: 'resume/avikam-jha-devops.pdf', label: 'DevOps résumé' }
+        resume: { href: '/resume/avikam-jha-devops.pdf', label: 'DevOps résumé' }
       },
       ai: {
         phrases: ['human-centered AI', 'interpretability tools for LLMs', 'CUDA kernels for PyTorch', 'retrieval pipelines for LLMs'],
         roles: 'AI/ML engineering and research',
-        resume: { href: 'resume/avikam-jha-ai-ml.pdf', label: 'AI/ML résumé' }
+        resume: { href: '/resume/avikam-jha-ai-ml.pdf', label: 'AI/ML résumé' }
       }
     };
     const rotator = document.querySelector('.rotator');
@@ -540,7 +549,12 @@
       const t = TRACKS[track];
       document.body.dataset.track = track;
       document.querySelectorAll('[data-set]').forEach(b => {
-        if (b.matches('.switch button, .choice')) b.setAttribute('aria-pressed', String(b.dataset.set === track));
+        if (b.matches('.switch button, .pill')) b.setAttribute('aria-pressed', String(b.dataset.set === track));
+      });
+      // Show how many projects each group holds in this view
+      document.querySelectorAll('.project-group').forEach(g => {
+        const n = [...g.querySelectorAll('.card')].filter(c => getComputedStyle(c).display !== 'none').length;
+        g.querySelector('.count').textContent = `(${n})`;
       });
       document.getElementById('role-text').textContent = t.roles;
       heroResume.textContent = t.resume.label;
@@ -549,9 +563,8 @@
       phrases = t.phrases;
       phraseIndex = 0;
       rotator.textContent = phrases[0];
-      const url = new URL(location.href);
-      if (track === 'all') url.searchParams.delete('track'); else url.searchParams.set('track', track);
-      history.replaceState(null, '', url);
+      // Show the short link (/silicon/, /devops/, /ai/) so it can be copied straight from the address bar
+      history.replaceState(null, '', (track === 'all' ? '/' : `/${track}/`) + location.hash);
       // Newly shown items should be visible right away
       document.querySelectorAll('.reveal:not(.in)').forEach(el => { if (el.offsetParent && el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); });
     }
@@ -559,7 +572,7 @@
       setTrack(b.dataset.set);
       if (b.dataset.jump) document.querySelector(b.dataset.jump).scrollIntoView();
     }));
-    setTrack(new URLSearchParams(location.search).get('track') || 'all');
+    setTrack(new URLSearchParams(location.search).get('track') || location.pathname.split('/').filter(Boolean)[0] || 'all');
 
     // Rotate through the kinds of work I do for the chosen track
     if (!reduceMotion) setInterval(() => {
