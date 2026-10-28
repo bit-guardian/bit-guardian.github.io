@@ -80,21 +80,21 @@
           <h3>Silicon</h3>
           <p class="impact">0 timing violations across 2,196 paths in 7nm</p>
           <p>From micro-architecture and RTL through coverage-driven verification to place-and-route and signoff.</p>
-          <button type="button" class="track-btn" data-set="silicon" data-jump="#projects">View silicon work →</button>
+          <button type="button" class="track-btn" data-set="silicon">Show Silicon only</button>
         </article>
         <article class="track" data-card="devops" style="--c: var(--devops)">
           <p class="track-kicker">Platform · SRE · Cloud</p>
           <h3>DevOps</h3>
           <p class="impact">30% lower cloud cost, under 2 hours of migration downtime</p>
           <p>Over two years running Kubernetes, Terraform, CI/CD, and observability for a 60+ microservice platform.</p>
-          <button type="button" class="track-btn" data-set="devops" data-jump="#experience">View DevOps work →</button>
+          <button type="button" class="track-btn" data-set="devops">Show DevOps only</button>
         </article>
         <article class="track" data-card="ai" style="--c: var(--ai)">
           <p class="track-kicker">Engineering · Research</p>
           <h3>AI/ML</h3>
           <p class="impact">First-author HRI 2027 submission</p>
           <p>Custom CUDA kernels, LLM pipelines, and research on how people understand and work with AI.</p>
-          <button type="button" class="track-btn" data-set="ai" data-jump="#projects">View AI/ML work →</button>
+          <button type="button" class="track-btn" data-set="ai">Show AI/ML only</button>
         </article>
       </div>
     </section>
@@ -122,7 +122,7 @@
         </div>
       </div>
 
-      <div class="item" data-tracks="silicon" style="--c: var(--silicon)">
+      <div class="item" style="--c: var(--silicon)">
         <div class="item-meta">Aug 2025 - May 2026</div>
         <div>
           <h3>Graduate Service Assistant <span class="sub">· Arizona State University</span></h3>
@@ -131,7 +131,7 @@
         </div>
       </div>
 
-      <div class="item" data-tracks="silicon" style="--c: var(--silicon)">
+      <div class="item" style="--c: var(--silicon)">
         <div class="item-meta">May 2025 - Aug 2025</div>
         <div>
           <h3>Research Aide, Materials Science <span class="sub">· Arizona State University</span></h3>
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="item" data-tracks="devops" style="--c: var(--devops)">
+      <div class="item" style="--c: var(--devops)">
         <div class="item-meta">Oct 2021 - Feb 2022</div>
         <div>
           <h3>Software Developer Intern <span class="sub">· Winjit Technologies, Nashik</span></h3>
@@ -584,10 +584,7 @@
       // Newly shown items should be visible right away
       document.querySelectorAll('.reveal:not(.in)').forEach(el => { if (el.offsetParent && el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); });
     }
-    document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => {
-      setTrack(b.dataset.set);
-      if (b.dataset.jump) document.querySelector(b.dataset.jump).scrollIntoView();
-    }));
+    document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => setTrack(b.dataset.set)));
     setTrack(new URLSearchParams(location.search).get('track') || location.pathname.split('/').filter(Boolean)[0] || 'all');
 
     // Rotate through the kinds of work I do for the chosen track
