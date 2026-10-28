@@ -192,9 +192,16 @@ strong, .hl { color: var(--text-strong); font-weight: 500; }
   border: 0; background: none; cursor: pointer;
   color: var(--c); font-size: 0.85rem; font-weight: 600;
 }
-.track-btn:hover { text-decoration: underline; text-underline-offset: 4px; }
+.track:hover .track-btn { text-decoration: underline; text-underline-offset: 4px; }
+/* Stretch the button's click area over the whole card, so clicking anywhere on it works */
+.track { cursor: pointer; }
+.track-btn::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.track-btn:focus-visible { outline: none; }
+.track:has(.track-btn:focus-visible) { outline: 2px solid var(--c); outline-offset: 3px; }
 /* Dim the other tracks with a filter so it never fights the reveal animation's opacity */
 body:not([data-track="all"]) .track { filter: saturate(0.25) brightness(0.55); }
+/* Brighten a dimmed card on hover so it reads as clickable (the selected-card rule below still wins) */
+body:not([data-track="all"]) .track:hover { filter: saturate(0.8) brightness(0.9); }
 body[data-track="silicon"] .track[data-card="silicon"],
 body[data-track="devops"] .track[data-card="devops"],
 body[data-track="ai"] .track[data-card="ai"] { filter: none; border-color: var(--c); }
