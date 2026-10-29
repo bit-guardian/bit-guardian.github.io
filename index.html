@@ -197,6 +197,22 @@
         </article>
 
         <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+          <div class="card-top"><span class="card-kicker">DV</span><span class="card-date">Jan 2025 - May 2025</span></div>
+          <h3>LC-3 Pipelined Processor Verification with UVM</h3>
+          <p class="impact">99.13% coverage · 14 UVM agents · 12 seeded tests</p>
+          <p>Built a UVM testbench for a 5-stage pipelined LC-3 processor that met every test-plan goal.</p>
+          <details class="more">
+            <summary><span class="show">Show details</span><span class="hide">Hide details</span></summary>
+            <ul class="points">
+              <li>A dedicated environment per pipeline stage (Fetch, Decode, Execute, MemAccess, and Writeback), each with a sequencer, driver, monitor, predictor, and scoreboard.</li>
+              <li>Reference-model predictors for every stage, with covergroups and crosses over ALU, memory, and control instructions across all valid registers, offsets, and NZP combinations.</li>
+              <li>A scripted Questa regression that merges the XML test plan and simulation results into one UCDB.</li>
+            </ul>
+          </details>
+          <ul class="tags"><li>UVM (UVMF)</li><li>SystemVerilog</li><li>Questa</li></ul>
+        </article>
+
+        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">RTL</span><span class="card-date">Aug 2025 - Dec 2025</span></div>
           <h3>5-Stage Pipelined 32-bit CPU</h3>
           <p class="impact">Full forwarding · 5 hazards resolved · atomics</p>
@@ -297,7 +313,7 @@
             <summary><span class="show">Show details</span><span class="hide">Hide details</span></summary>
             <ul class="points">
               <li><strong>RTL:</strong> UART, synchronous and asynchronous FIFOs, a round-robin arbiter, CDC synchronizers, and Hamming ECC, integrated into an RV32I SoC.</li>
-              <li><strong>DV:</strong> UVM agents, scoreboards, constrained-random sequences, and RAL, plus SVA and a formal FIFO safety proof.</li>
+              <li><strong>DV:</strong> SVA for valid/ready handshakes and FIFOs, a formal FIFO safety proof, UVM agents with RAL for APB and AXI4-Lite blocks, and a Python/Make regression flow.</li>
               <li><strong>PD:</strong> SDC constraints, place-and-route, and DRC/LVS signoff in open-source and Cadence flows.</li>
             </ul>
           </details>
@@ -443,7 +459,7 @@
       <div class="skills">
         <div data-tracks="silicon" style="--c: var(--silicon)">
           <h4>// rtl &amp; verification</h4>
-          <ul class="tags"><li>SystemVerilog</li><li>Verilog</li><li>ModelSim</li><li>Vivado</li><li>Functional coverage</li><li>PLI</li><li>UVM (in progress)</li><li>SVA (in progress)</li></ul>
+          <ul class="tags"><li>SystemVerilog</li><li>Verilog</li><li>ModelSim</li><li>Vivado</li><li>Functional coverage</li><li>PLI</li><li>UVM (UVMF)</li><li>Questa</li><li>UCDB coverage merging</li><li>SVA (in progress)</li><li>SymbiYosys formal (in progress)</li></ul>
         </div>
         <div data-tracks="silicon" style="--c: var(--silicon)">
           <h4>// physical design</h4>
