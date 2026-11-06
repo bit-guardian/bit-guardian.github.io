@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="/style.css?v=10">
+  <link rel="stylesheet" href="/style.css?v=11">
 </head>
 <body data-track="all">
   <div class="spotlight" aria-hidden="true"></div>
@@ -28,6 +28,7 @@
     <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#resume">Résumé</a>
@@ -102,7 +103,7 @@
     <section id="experience">
       <h2 class="section-title">Experience</h2>
 
-      <div class="item" style="--c: var(--devops)">
+      <div class="item" style="--c: var(--devops)" data-skills="Ansible, Python, Bash, Linux, Prometheus, Grafana, ELK, OpenTelemetry, HashiCorp Vault">
         <div class="item-meta">Mar 2022 - Jul 2024</div>
         <div>
           <h3>SDE Intern → SDE 1 → SDE 2 (DevOps) <span class="sub">· Park+, Gurugram</span></h3>
@@ -147,8 +148,10 @@
           <ul class="tags"><li>Azure</li><li>Kubernetes</li><li>CI/CD</li></ul>
         </div>
       </div>
+    </section>
 
-      <p class="group-label">// education</p>
+    <section id="education">
+      <h2 class="section-title">Education</h2>
       <div class="item">
         <div class="item-meta">Aug 2024 - Dec 2026</div>
         <div>
@@ -196,7 +199,7 @@
           <ul class="tags"><li>SystemVerilog</li><li>Design Compiler</li><li>Innovus</li><li>ASAP7</li></ul>
         </article>
 
-        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+        <article class="card" data-skills="Functional coverage, UCDB coverage merging" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">DV</span><span class="card-date">Jan 2025 - May 2025</span></div>
           <h3>LC-3 Pipelined Processor Verification with UVM</h3>
           <p class="impact">99.13% coverage · 14 UVM agents · 12 seeded tests</p>
@@ -228,7 +231,7 @@
           <ul class="tags"><li>SystemVerilog</li><li>Micro-architecture</li></ul>
         </article>
 
-        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+        <article class="card" data-skills="C" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">DV</span><span class="card-date">Aug 2025 - Dec 2025</span></div>
           <h3>VeriChip: Coverage-Driven Verification</h3>
           <p class="impact">16 ALU commands · 4 covergroups · 3-way crosses</p>
@@ -259,7 +262,7 @@
           <ul class="tags"><li>Virtuoso</li><li>Calibre</li><li>HSPICE</li></ul>
         </article>
 
-        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+        <article class="card" data-skills="Design Compiler" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">PD</span><span class="card-date">Jan 2025 - May 2025</span></div>
           <h3>Registered Adder, Full-Flow Bring-Up</h3>
           <p class="impact">Synthesis → CTS → APR → GDS signoff</p>
@@ -274,7 +277,7 @@
           <ul class="tags"><li>Tcl</li><li>Innovus</li><li>Virtuoso</li></ul>
         </article>
 
-        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+        <article class="card" data-skills="Virtuoso, IC Validator" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">Custom · PD</span><span class="card-date">Aug 2024 - May 2025</span></div>
           <h3>Custom Circuits &amp; FinFET Characterization</h3>
           <p class="impact">240 ps · 27.43 µW · 23 µm²</p>
@@ -304,7 +307,7 @@
           <ul class="tags"><li>gem5</li><li>C++</li><li>Python</li></ul>
         </article>
 
-        <article class="card" data-tracks="silicon" style="--c: var(--silicon)">
+        <article class="card" data-skills="SystemVerilog, SymbiYosys formal, Python" data-tracks="silicon" style="--c: var(--silicon)">
           <div class="card-top"><span class="card-kicker">RTL · DV · PD</span><span class="card-date">Sep 2026 - Dec 2026</span></div>
           <h3>RISC-V SoC, UVM &amp; RTL-to-GDS Program <span class="status">in progress</span></h3>
           <p class="impact">RV32I SoC · AXI4-Lite · APB · UVM</p>
@@ -379,7 +382,7 @@
       <div class="project-group" data-tracks="ai" style="--c: var(--ai)">
         <div class="group-head"><h3>AI/ML <span class="count"></span></h3><p>Engineering · Research</p></div>
         <div class="cards">
-        <article class="card" data-tracks="ai" style="--c: var(--ai)">
+        <article class="card" data-skills="Python" data-tracks="ai" style="--c: var(--ai)">
           <div class="card-top"><span class="card-kicker">GPU</span><span class="card-date">Jan 2025 - May 2025</span></div>
           <h3>Custom CUDA Kernels for PyTorch</h3>
           <p class="impact">Forward and backward passes in autograd</p>
@@ -394,7 +397,7 @@
           <ul class="tags"><li>CUDA</li><li>C++</li><li>PyTorch</li></ul>
         </article>
 
-        <article class="card" data-tracks="ai" style="--c: var(--ai)">
+        <article class="card" data-skills="Python, Docker" data-tracks="ai" style="--c: var(--ai)">
           <div class="card-top"><span class="card-kicker">LLM</span><span class="card-date">Jan 2026 - May 2026</span></div>
           <h3>RAG Pipeline &amp; Local LLM Serving</h3>
           <p class="impact">About 25% better relevance · under 200 ms</p>
@@ -437,7 +440,7 @@
             </ul>
           </details>
         </article>
-        <article class="card" style="--c: var(--ai)">
+        <article class="card" data-skills="Python" style="--c: var(--ai)">
           <div class="card-top"><span class="card-kicker">Thesis</span><span class="card-date">Aug 2025 - Dec 2026</span></div>
           <h3>Interpretability of LLM Planning <span class="status">ongoing</span></h3>
           <p class="impact">Sparse autoencoders · human-in-the-loop study</p>
@@ -456,6 +459,7 @@
 
     <section id="skills">
       <h2 class="section-title">Skills</h2>
+      <p class="section-intro skills-hint">Click a skill to see where I've used it. The number shows how many projects and jobs use it.</p>
       <div class="skills">
         <div data-tracks="silicon" style="--c: var(--silicon)">
           <h4>// rtl &amp; verification</h4>
@@ -599,7 +603,87 @@
       history.replaceState(null, '', (track === 'all' ? '/' : `/${track}/`) + location.hash);
       // Newly shown items should be visible right away
       document.querySelectorAll('.reveal:not(.in)').forEach(el => { if (el.offsetParent && el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); });
+      refreshSkills();
     }
+
+    // Clickable skills: each skill links to the visible jobs, projects, and research that use it.
+    // Uses come from each entry's tags plus its optional data-skills list, so new projects link up on their own.
+    const ALIASES = { 'asap7 7nm': 'asap7', 'hashicorp vault': 'vault' };
+    const canon = s => { const k = s.toLowerCase().replace(/\(.*?\)/g, '').replace(/\s+/g, ' ').trim(); return ALIASES[k] || k; };
+    const skillUses = new Map();
+
+    function refreshSkills() {
+      closeSkillPanel();
+      const sources = [...document.querySelectorAll('#experience .item, #projects .card, #research .card')]
+        .filter(el => el.offsetParent !== null)
+        .map((el, i) => {
+          el.id ||= `work-${i}`;
+          const names = [...el.querySelectorAll('.tags li')].map(li => li.textContent)
+            .concat((el.dataset.skills || '').split(',').filter(Boolean));
+          const kicker = el.querySelector('.card-kicker')?.textContent || 'Experience';
+          return { id: el.id, title: el.querySelector('h3').childNodes[0].textContent.trim(), kicker, skills: new Set(names.map(canon)) };
+        });
+      document.querySelectorAll('.skills .tags li').forEach(li => {
+        const label = li.dataset.label ||= li.textContent.trim();
+        const uses = sources.filter(s => s.skills.has(canon(label)));
+        skillUses.set(li, uses);
+        li.classList.toggle('has-uses', uses.length > 0);
+        li.innerHTML = '';
+        if (uses.length) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-expanded', 'false');
+          b.title = `See where I've used ${label}`;
+          b.append(label);
+          const n = document.createElement('span');
+          n.className = 'n';
+          n.textContent = uses.length;
+          b.append(n);
+          li.append(b);
+        } else {
+          li.textContent = label;
+        }
+      });
+    }
+
+    function closeSkillPanel() {
+      document.querySelector('.skill-panel')?.remove();
+      document.querySelectorAll('.skills .tags button[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    }
+
+    document.querySelector('.skills').addEventListener('click', e => {
+      const jump = e.target.closest('.skill-panel button[data-to]');
+      if (jump) {
+        const target = document.getElementById(jump.dataset.to);
+        target.scrollIntoView({ block: 'center' });
+        target.classList.remove('flash');
+        void target.offsetWidth;
+        target.classList.add('flash');
+        return;
+      }
+      const chip = e.target.closest('.tags button');
+      if (!chip) return;
+      const wasOpen = chip.getAttribute('aria-expanded') === 'true';
+      closeSkillPanel();
+      if (wasOpen) return;
+      const li = chip.closest('li');
+      const uses = skillUses.get(li);
+      chip.setAttribute('aria-expanded', 'true');
+      const panel = document.createElement('div');
+      panel.className = 'skill-panel';
+      panel.innerHTML = `<p class="skill-panel-title"><strong></strong> · used in ${uses.length}</p><ul></ul>`;
+      panel.querySelector('strong').textContent = li.dataset.label;
+      uses.forEach(u => {
+        const item = document.createElement('li');
+        item.innerHTML = '<button type="button"><span class="t"></span><span class="k"></span></button>';
+        item.querySelector('button').dataset.to = u.id;
+        item.querySelector('.t').textContent = '→ ' + u.title;
+        item.querySelector('.k').textContent = u.kicker;
+        panel.querySelector('ul').append(item);
+      });
+      chip.closest('.tags').after(panel);
+    });
+
     document.querySelectorAll('[data-set]').forEach(b => b.addEventListener('click', () => setTrack(b.dataset.set)));
     setTrack(new URLSearchParams(location.search).get('track') || location.pathname.split('/').filter(Boolean)[0] || 'all');
 

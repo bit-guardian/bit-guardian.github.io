@@ -320,7 +320,7 @@ footer { padding-top: 96px; text-align: center; font-size: 0.8rem; color: var(--
   .tracks { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .skills { grid-template-columns: repeat(3, 1fr); }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1440px) {
   .topbar nav { display: flex; }
 }
 @media (max-width: 640px) {
@@ -384,3 +384,46 @@ body[data-track="ai"] .rotator { color: var(--ai); }
 .group-head h3 { color: var(--c); font-size: 1.15rem; font-weight: 700; }
 .group-head .count { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
 .group-head p { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); }
+
+/* ---------- Clickable skills ---------- */
+.skills-hint { display: flex; align-items: baseline; gap: 8px; font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; }
+.skills-hint::before { content: "↓"; font-family: var(--mono); color: var(--track-c); }
+.skills .tags li.has-uses { padding: 0; }
+.skills .tags li button {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 3px 5px 3px 11px; border: 0; border-radius: 999px;
+  background: none; color: inherit; font: inherit; cursor: pointer;
+}
+.skills .tags li .n {
+  min-width: 18px; padding: 0 5px; border-radius: 999px;
+  background: color-mix(in srgb, var(--c, var(--track-c)) 28%, transparent);
+  color: var(--text-strong); font-family: var(--mono); font-size: 0.66rem; line-height: 1.5; text-align: center;
+}
+.skills .tags li.has-uses:hover { background: color-mix(in srgb, var(--c, var(--track-c)) 24%, transparent); }
+.skills .tags li.has-uses:has(button[aria-expanded="true"]) { background: var(--c, var(--track-c)); }
+.skills .tags li button[aria-expanded="true"] { color: var(--bg); }
+.skills .tags li button[aria-expanded="true"] .n { background: rgba(11, 17, 32, 0.25); color: var(--bg); }
+.skills .tags li button:focus-visible { outline: 2px solid var(--c, var(--track-c)); outline-offset: 2px; }
+
+.skill-panel {
+  margin-top: 12px; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--c, var(--track-c)) 35%, transparent);
+  background: color-mix(in srgb, var(--c, var(--track-c)) 7%, var(--bg-raised));
+  animation: fade .25s ease;
+}
+.skill-panel-title { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+.skill-panel ul { list-style: none; }
+.skill-panel button {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%;
+  padding: 6px 8px; margin: 0 -8px; width: calc(100% + 16px);
+  border: 0; border-radius: 8px; background: none; cursor: pointer; text-align: left;
+  color: var(--text-strong); font: inherit; font-size: 0.86rem;
+}
+.skill-panel button:hover { background: color-mix(in srgb, var(--c, var(--track-c)) 14%, transparent); }
+.skill-panel .k { flex-shrink: 0; font-family: var(--mono); font-size: 0.68rem; color: var(--c, var(--track-c)); }
+
+/* Briefly highlight the card a skill link jumps to */
+.flash { animation: flash 1.8s ease; }
+@keyframes flash {
+  0%, 55% { box-shadow: 0 0 0 2px var(--c, var(--track-c)), 0 0 44px -8px var(--c, var(--track-c)); }
+}
