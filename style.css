@@ -280,7 +280,29 @@ ul.points li::marker { color: var(--c, var(--track-c)); }
 .skills { display: grid; grid-template-columns: 1fr; gap: 22px; }
 .skills h4 { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--c, var(--track-c)); margin-bottom: 8px; }
 .skills .tags { margin-top: 0; }
-.certs { margin-top: 28px; font-size: 0.92rem; }
+/* Certifications */
+.certs-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.cert {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 18px; border-radius: 14px; border: 1px solid var(--border);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 8%, var(--bg-raised)), rgba(17, 26, 46, 0.5) 60%);
+  transition: border-color .25s, box-shadow .25s;
+}
+.cert:hover { border-color: color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 18px 40px -26px var(--c); }
+.cert-main { border-color: color-mix(in srgb, var(--c) 30%, transparent); }
+.cert-icon {
+  display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px;
+  border-radius: 12px; background: color-mix(in srgb, var(--c) 16%, transparent); color: var(--c);
+}
+.cert-icon svg { width: 24px; height: 24px; }
+.cert-issuer { font-family: var(--mono); font-size: 0.7rem; color: var(--c); }
+.cert h3 { margin-top: 2px; color: var(--text-strong); font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.cert-level { margin-top: 2px; font-size: 0.82rem; color: var(--text-muted); }
+.cert-minor { padding: 14px 18px; }
+.cert-minor .cert-icon { width: 36px; height: 36px; }
+.cert-minor .cert-icon svg { width: 20px; height: 20px; }
+.cert-minor h3 { font-size: 0.92rem; }
+@media (min-width: 640px) { .certs-grid { grid-template-columns: 1fr 1fr; } }
 
 .resumes { display: grid; grid-template-columns: 1fr; gap: 10px; list-style: none; }
 .resumes a {

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Bump the ?v= number whenever style.css changes so browsers fetch the new file -->
-  <link rel="stylesheet" href="/style.css?v=12">
+  <link rel="stylesheet" href="/style.css?v=13">
 </head>
 <body data-track="all">
   <div class="spotlight" aria-hidden="true"></div>
@@ -87,7 +87,7 @@
           <p class="track-kicker">Platform · SRE · Cloud</p>
           <h3>DevOps</h3>
           <p class="impact">30% lower cloud cost, under 2 hours of migration downtime</p>
-          <p>Over two years running Kubernetes, Terraform, CI/CD, and observability for a 60+ microservice platform.</p>
+          <p>Over two years running Kubernetes, Terraform, CI/CD, and observability for a 60+ microservice platform. AWS Solutions Architect and Terraform certified.</p>
           <button type="button" class="track-btn" data-set="devops">Show DevOps only</button>
         </article>
         <article class="track" data-card="ai" style="--c: var(--ai)">
@@ -172,6 +172,44 @@
             <p>Digital Signal Processing, Control Theory, Data Structures &amp; Algorithms, Neural Networks, and Pattern Recognition &amp; Machine Learning.</p>
           </details>
         </div>
+      </div>
+    </section>
+
+    <section id="certifications" data-tracks="devops ai">
+      <h2 class="section-title">Certifications</h2>
+      <div class="certs-grid">
+        <article class="cert cert-main" style="--c: var(--devops)">
+          <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"/></svg></div>
+          <div>
+            <p class="cert-issuer">Amazon Web Services</p>
+            <h3>AWS Certified Solutions Architect</h3>
+            <p class="cert-level">Associate</p>
+          </div>
+        </article>
+        <article class="cert cert-main" style="--c: var(--devops)">
+          <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"/></svg></div>
+          <div>
+            <p class="cert-issuer">HashiCorp</p>
+            <h3>HashiCorp Certified: Terraform Associate</h3>
+            <p class="cert-level">Infrastructure as code</p>
+          </div>
+        </article>
+        <article class="cert cert-minor" style="--c: var(--devops)">
+          <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"/></svg></div>
+          <div>
+            <p class="cert-issuer">Amazon Web Services</p>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p class="cert-level">Foundational</p>
+          </div>
+        </article>
+        <article class="cert cert-minor" style="--c: var(--devops)">
+          <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.5 7.8 5-3 5 3-1.5-7.8"/></svg></div>
+          <div>
+            <p class="cert-issuer">Service mesh</p>
+            <h3>Istio Fundamentals</h3>
+            <p class="cert-level">Kubernetes service mesh</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -486,7 +524,6 @@
           <ul class="tags"><li>Python</li><li data-tracks="silicon ai">C++</li><li data-tracks="silicon">C</li><li data-tracks="devops">Go</li><li data-tracks="devops">SQL</li><li data-tracks="silicon">Tcl</li><li data-tracks="devops silicon">Bash</li><li data-tracks="silicon">gem5</li><li>Git</li><li>Linux</li></ul>
         </div>
       </div>
-      <p class="certs" data-tracks="devops"><strong>Certifications:</strong> AWS Certified Solutions Architect (Associate) · HashiCorp Terraform Associate · AWS Certified Cloud Practitioner · Istio Fundamentals</p>
     </section>
 
     <section id="resume">
@@ -550,7 +587,7 @@
         revealer.unobserve(entry.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.portrait, #about p, .track, .section-intro, .group-label, .group-head, .item, .card, .skills > div, .certs, .resumes li, #contact p, #contact .cta')
+    document.querySelectorAll('.portrait, #about p, .track, .section-intro, .group-label, .group-head, .item, .card, .skills > div, .cert, .resumes li, #contact p, #contact .cta')
       .forEach(el => { el.classList.add('reveal'); revealer.observe(el); });
 
     // Track switch: tailor the whole page to one role, and remember it in the URL
