@@ -449,3 +449,12 @@ body[data-track="ai"] .rotator { color: var(--ai); }
 @keyframes flash {
   0%, 55% { box-shadow: 0 0 0 2px var(--c, var(--track-c)), 0 0 44px -8px var(--c, var(--track-c)); }
 }
+
+/* Award badge on a job */
+.award {
+  display: inline-flex; align-items: center; gap: 7px; margin: 8px 0 2px;
+  padding: 4px 12px 4px 9px; border-radius: 999px;
+  border: 1px solid rgba(251, 191, 36, 0.4); background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24; font-size: 0.8rem; font-weight: 600;
+}
+.award svg { width: 15px; height: 15px; }
