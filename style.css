@@ -12,8 +12,8 @@
   --silicon: #5eead4;
   --devops: #60a5fa;
   --ai: #c084fc;
-  /* Color for content shared by every track: neutral on the full view, the track color otherwise */
-  --track-c: #cbd5e1;
+  /* Color for content shared by every track: the site teal on the full view, the track color otherwise */
+  --track-c: var(--accent);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
